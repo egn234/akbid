@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php $data['title'] = "this is homepage"?>
+  <?php $data['title'] = "Akbid - Home"?>
   <?php $this->load->view('header_assets', $data); ?>
 </head>
 
@@ -27,8 +27,15 @@
             <li class="nav-item">
               <a class="nav-link" href="page/about">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="page/service">Services</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="services">
+                <a class="dropdown-item" href="#">Service A</a>
+                <a class="dropdown-item" href="#">Service B</a>
+                <a class="dropdown-item" href="#">Service C</a>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="page/blog">Blog</a>
