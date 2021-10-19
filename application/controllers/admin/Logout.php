@@ -4,7 +4,8 @@
 	class logout extends CI_Controller {
 
 		public function index(){
-			
+			$this->session->unset_userdata('admin_id_sess');
+			redirect('admin/login');
 		}
 
 	}

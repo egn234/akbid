@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SiPra | Log in</title>
+  <title>Akbid | Log in admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,15 +21,15 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?=base_url()?>"><b>SiP</b>ra | Login</a>
+    <a href="<?=base_url()?>"><b>AKBID</b> Admin | Login</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <?= $this->session->flashdata('notif_login'); ?>
-      <form action="<?=base_url()?>login/smart_login" method="post">
+      <form action="<?=base_url()?>admin/login/auth" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="NIM atau NIP" name="username" value="<?=$this->session->flashdata('s_username');?>">
+          <input type="text" class="form-control" placeholder="Username" name="username" value="<?=$this->session->flashdata('s_username');?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
