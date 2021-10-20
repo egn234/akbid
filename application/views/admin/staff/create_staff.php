@@ -4,12 +4,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Data Dosen</h1>
+					<h1 class="m-0 text-dark">Data Staff</h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active">Dosen</li>
+						<li class="breadcrumb-item active">Staff</li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -23,46 +23,40 @@
 			<div class="card">
 
 				<div class="card-header">
-					<h3 class="card-title">Tambah Data Dosen</h3>
+					<h3 class="card-title">Tambah Data Staff</h3>
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
-					<form class="form-horizontal" method="POST" action="<?= base_url(); ?>admin/dosen/save_dosen" enctype="multipart/form-data">
+					<form class="form-horizontal" method="POST" action="<?= base_url(); ?>admin/staff/save_staff" enctype="multipart/form-data">
 						<div class="card-body">
 							<div class="form-group row">
-								<label class="col-sm-2 col-form-label">Nama Dosen :</label>
+								<label class="col-sm-2 col-form-label">Nama Staff :</label>
 								<div class="col-sm-6">
-									<input class="form-control" id="nofak" type="text" placeholder="....." name="nama_dosen" required>
+									<input class="form-control" id="nofak" type="text" placeholder="....." name="nama_staff" required>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-2 col-form-label">Nidn Dosen :</label>
+								<label class="col-sm-2 col-form-label">Pendidikan Terakhir :</label>
 								<div class="col-sm-6">
-									<input class="form-control" id="kodsu" type="number" placeholder="....." name="nidn_dosen" required>
+									<input class="form-control" id="kodsu" type="text" placeholder="....." name="pendidikan_terakhir" required>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-2 col-form-label">Nip Dosen :</label>
+								<label class="col-sm-2 col-form-label">Nip Staff :</label>
 								<div class="col-sm-6">
-									<input class="form-control" type="number" placeholder="....." name="nip_dosen" required>
+									<input class="form-control" type="number" placeholder="....." name="nip_staff" required>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-2 col-form-label">Prodi :</label>
+								<label class="col-sm-2 col-form-label">Jabatan :</label>
 								<div class="col-sm-6">
-									<input class="form-control" type="text" placeholder="....." name="prodi" required>
+									<input class="form-control" type="text" placeholder="....." name="jabatan" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Email :</label>
 								<div class="col-sm-6">
 									<input class="form-control" type="email" placeholder="example@gmail.com" name="email" required>
-								</div>
-							</div>
-							<div class="form-group row">
-								<label class="col-sm-2 col-form-label">Jabatan Struktural :</label>
-								<div class="col-sm-6">
-									<input class="form-control" type="text" placeholder="....." name="jabatan_struktural" required>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -92,7 +86,7 @@
 				<!-- /.card-body -->
 				<div class="card-footer">
 					<button type="submit" class="btn btn-success">Save</button>
-					<a href="<?= base_url(); ?>admin/dosen" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
+					<a href="<?= base_url(); ?>admin/staff" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
 
 				</div>
 				</form>

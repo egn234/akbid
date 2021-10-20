@@ -30,5 +30,24 @@ class m_dosen extends CI_Model {
 		$this->db->insert('tb_dosen', $data);
 	}
 
+	public function editDosen($nama_dosen, $nidn_dosen, $nip_dosen, $prodi, $email, $jabatan_struktural, $nomor_telp, $foto, $status, $dosen_id)
+	{
+		$data = array(
+			'nama' => $nama_dosen,
+			'nidn_dosen' => $nidn_dosen,
+			'nip_dosen' => $nip_dosen,
+			'prodi' => $prodi,
+			'email' => $email,
+			'jabatan_struktural' => $jabatan_struktural,
+			'nomor_telp' => $nomor_telp,
+			'status' => $status
+		);
+		if ($foto != "") {
+			$data['foto'] = $foto;
+		}
+		$isi = $this->db->where('dosen_id', $dosen_id);
+		$this->db->update('tb_dosen', $data);
+	}
+
 
 }

@@ -4,12 +4,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Data Dosen</h1>
+					<h1 class="m-0 text-dark">Data Staff</h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active">Dosen</li>
+						<li class="breadcrumb-item active">Staff</li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -23,7 +23,7 @@
 			<div class="card">
 
 				<div class="card-header">
-					<a href="<?= base_url(); ?>admin/dosen/create_dosen" class="btn btn-success ">Add New(+)</a>
+					<a href="<?= base_url(); ?>admin/staff/create_staff" class="btn btn-success ">Add New(+)</a>
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
@@ -32,11 +32,10 @@
 							<tr>
 								<th>No</th>
 								<th>Nama</th>
-								<th>Nidn</th>
+								<th>Pendidikan</th>
 								<th>Nip</th>
-								<th>Prodi</th>
-								<th>Email</th>
 								<th>Jabatan</th>
+								<th>Email</th>
 								<th>Foto</th>
 								<th>Status</th>
 								<th>Aksi</th>
@@ -53,12 +52,11 @@
 								<tr>
 									<td><?= $no ?></td>
 									<td><?= $data->nama ?></td>
-									<td><?= $data->nidn_dosen ?></td>
-									<td><?= $data->nip_dosen ?></td>
-									<td><?= $data->prodi ?></td>
+									<td><?= $data->pendidikan_terakhir ?></td>
+									<td><?= $data->nip_staff ?></td>
+									<td><?= $data->jabatan ?></td>
 									<td><?= $data->email ?></td>
-									<td><?= $data->jabatan_struktural ?></td>
-									<td><img src="<?= base_url(); ?>upload/dosen/<?= $data->foto ?>" class="rounded" width='70' height='90'></td>
+									<td><img src="<?= base_url(); ?>upload/staff/<?= $data->foto ?>" class="rounded" width='70' height='90'></td>
 									<td>
 										<center>
 											<?php if ($data->status == "aktif") { ?>
@@ -69,7 +67,7 @@
 										</center>
 									</td>
 									<td>
-										<a href="<?= base_url(); ?>admin/dosen/detail_dosen?id=<?= $data->dosen_id ?>" class="btn btn-info">Detail</a>
+										<a href="<?= base_url(); ?>admin/staff/detail_staff?id=<?= $data->staff_id ?>" class="btn btn-info">Detail</a>
 										<a href="#" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
 									</td>
 								</tr>

@@ -111,87 +111,30 @@
 							</a>
 						</li>
 
-						<li class="nav-item">
-							<a id="dashboard" href="<?= base_url(); ?>admin/dosen" class="nav-link">
-								<i class="fas fa-user nav-icon"></i>
-								<p>Data Dosen</p>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a id="dashboard" href="<?= base_url(); ?>admin/staff" class="nav-link">
-								<i class="fas fa-user nav-icon"></i>
-								<p>Data Staff</p>
-							</a>
-						</li>
-
-						<li id="jadwal" class="nav-item has-treeview">
+						<li id="datapegawai" class="nav-item has-treeview">
 							<a href="#" class="nav-link">
-								<i class="nav-icon fas fa-chalkboard-teacher"></i>
+								<i class="nav-icon fas fa-user"></i>
 								<p>
-									Jadwal
+									Data Pegawai
 									<i class="right fas fa-angle-left"></i>
 								</p>
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a id="jadsem" href="<?= base_url(); ?>dosen/jpr/list" class="nav-link">
+									<a id="jadsem" href="<?= base_url(); ?>admin/dosen" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
-										<p>Jadwal Semester Ini</p>
+										<p>Data Dosen</p>
 									</a>
 								</li>
 								<li class="nav-item">
-									<a id="jadhis" href="<?= base_url() ?>dosen/jpr/histori" class="nav-link">
+									<a id="jadhis" href="<?= base_url(); ?>admin/staff" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
-										<p>Histori Jadwal</p>
+										<p>Data Staff</p>
 									</a>
 								</li>
 							</ul>
 						</li>
-
-						<li id="modul" class="nav-item has-treeview">
-							<a href="#" class="nav-link">
-								<i class="nav-icon fas fa-book"></i>
-								<p>
-									Modul
-									<i class="right fas fa-angle-left"></i>
-								</p>
-							</a>
-							<ul class="nav nav-treeview">
-								<li class="nav-item">
-									<a id="modset" href="<?= base_url(); ?>dosen/modul/list_matkul" class="nav-link">
-										<i class="far fa-circle nav-icon"></i>
-										<p>Set Modul Praktikum</p>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a id="modseth" href="<?= base_url(); ?>dosen/modul/list_matkulh" class="nav-link">
-										<i class="far fa-circle nav-icon"></i>
-										<p>Histori Modul Praktikum</p>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a id="modkel" href="<?= base_url() ?>dosen/prakkel/list" class="nav-link">
-										<i class="far fa-circle nav-icon"></i>
-										<p>Set Modul Kelas</p>
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="nav-item">
-							<a id="nilai" href="<?= base_url(); ?>dosen/nilai/list" class="nav-link">
-								<i class="fas fa-file-signature nav-icon"></i>
-								<p>Manajemen Nilai</p>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a id="bapmgr" href="<?= base_url(); ?>dosen/bap/list" class="nav-link">
-								<i class="fas fa-clipboard-list nav-icon"></i>
-								<p>BAP</p>
-							</a>
-						</li>
+						
 					</ul>
 				</nav>
 				<!-- /.sidebar-menu -->
