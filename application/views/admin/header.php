@@ -134,7 +134,13 @@
 								</li>
 							</ul>
 						</li>
-						
+						<li class="nav-item">
+							<a id="dashboard" href="<?= base_url(); ?>admin/pencapaian" class="nav-link">
+								<i class="fas fa-trophy nav-icon"></i>
+								<p>Pencapaian</p>
+							</a>
+						</li>
+
 					</ul>
 				</nav>
 				<!-- /.sidebar-menu -->
