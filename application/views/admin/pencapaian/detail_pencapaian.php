@@ -47,7 +47,11 @@
   					<div class="form-group row">
   						<label class="col-sm-3 col-form-label" style="font-size: 19px;">Date Created :</label>
   						<div class="col-sm-6">
-  							<input class="form-control" id="nofak" type="text" placeholder="....." name="judul_pencapaian" value="<?= $data[0]->date_created ?>" disabled>
+  							<?php
+								$val = strtotime($data[0]->date_created);
+								$date = date("Y-m-d", $val);
+								?>
+  							<input class="form-control" id="nofak" type="date" placeholder="....." value="<?= $date ?>" disabled>
   						</div>
   					</div>
   				</div>

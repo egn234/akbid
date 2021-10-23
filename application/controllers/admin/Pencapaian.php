@@ -55,7 +55,8 @@ class pencapaian extends MY_Controller {
 		//file upload
 		$foto = addslashes($_FILES['foto']['name']);
 		$this->upload();
-		$date = date('Y-m-d H:i:s');
+		$date = $this->input->post('date_created');
+		
 		$admin_id =	$this->session->userdata('admin_id_sess');
 
 		$this->M_pencapaian->inputPencapaian($judul_pencapaian, $deskripsi_pencapaian, $foto, $date, $admin_id);
@@ -71,6 +72,8 @@ class pencapaian extends MY_Controller {
 		$pencapaian_id = $this->input->post('pencapaian_id');
 		$judul_pencapaian = $this->input->post('judul_pencapaian');
 		$deskripsi_pencapaian = $this->input->post('deskripsi_pencapaian');
+		$date = $this->input->post('date_created');
+		
 		//file upload
 		$foto = addslashes($_FILES['foto']['name']);
 		$old_foto = $this->input->post('old_foto');
@@ -79,7 +82,7 @@ class pencapaian extends MY_Controller {
 			unlink("./upload/pencapaian/". $old_foto);
 			$this->upload();
 		}
-		$this->M_pencapaian->editPencapaian($pencapaian_id ,$judul_pencapaian, $deskripsi_pencapaian, $foto);
+		$this->M_pencapaian->editPencapaian($pencapaian_id ,$judul_pencapaian, $deskripsi_pencapaian, $foto, $date);
 
 		$pesan = "Data Berhasil Di Edit";
 		echo "<script type='text/javascript'>

@@ -29,11 +29,12 @@ class m_pencapaian extends CI_Model {
 		$this->db->insert('tb_pencapaian', $data);
 	}
 
-	public function editPencapaian($pencapaian_id,$judul_pencapaian, $deskripsi_pencapaian, $foto)
+	public function editPencapaian($pencapaian_id,$judul_pencapaian, $deskripsi_pencapaian, $foto, $date)
 	{
 		$data = array(
 			'judul_pencapaian' => $judul_pencapaian,
-			'deskripsi_pencapaian' => $deskripsi_pencapaian
+			'deskripsi_pencapaian' => $deskripsi_pencapaian,
+			'date_created' => $date
 		);
 		if ($foto != "") {
 			$data['foto'] = $foto;

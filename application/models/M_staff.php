@@ -41,7 +41,6 @@ class m_staff extends CI_Model
 			'jabatan' => $jabatan,
 			'email' => $email,
 			'nomor_telp' => $nomor_telp,
-			'foto' => $foto,
 			'status' => $status
 		);
 		if ($foto != "") {

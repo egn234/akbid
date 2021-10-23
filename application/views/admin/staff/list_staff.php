@@ -47,6 +47,7 @@
 							$start = 0;
 							foreach ($allData as $data) {
 								$no = 1 + $start;
+								if ($data->status == "aktif") { 
 							?>
 
 								<tr>
@@ -61,18 +62,17 @@
 										<center>
 											<?php if ($data->status == "aktif") { ?>
 												<button class="btn btn-info" disabled>Aktif</button>
-											<?php } elseif ($data->status == "non-aktif") { ?>
-												<button class="btn btn-danger" disabled>Non-Aktif</button>
-											<?php } ?>
+											<?php }?>
 										</center>
 									</td>
 									<td>
 										<a href="<?= base_url(); ?>admin/staff/detail_staff?id=<?= $data->staff_id ?>" class="btn btn-info">Detail</a>
-										<a href="#" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+										<!-- <a href="#" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a> -->
 									</td>
 								</tr>
 
 							<?php $start = 1 + $start;
+								}
 							} ?>
 						</tbody>
 					</table>

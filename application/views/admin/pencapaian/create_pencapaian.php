@@ -47,6 +47,12 @@
 									<input class="form-control-sm" type="file" name="foto" id="formFile">
 								</div>
 							</div>
+							<div class="form-group row">
+								<label class="col-sm-2 col-form-label">Tanggal :</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="date" type="date" name="date_created" required>
+								</div>
+							</div>
 
 						</div>
 				</div>
@@ -77,7 +83,6 @@
 
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
-
 </script>
 </body>
 
