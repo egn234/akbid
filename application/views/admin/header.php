@@ -135,9 +135,15 @@
 							</ul>
 						</li>
 						<li class="nav-item">
-							<a id="dashboard" href="<?= base_url(); ?>admin/pencapaian" class="nav-link">
+							<a id="pencapaian" href="<?= base_url(); ?>admin/pencapaian" class="nav-link">
 								<i class="fas fa-trophy nav-icon"></i>
 								<p>Pencapaian</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a id="publikasi" href="<?= base_url(); ?>admin/publikasi" class="nav-link">
+								<i class="fas fa-clipboard-list nav-icon"></i>
+								<p>Publikasi</p>
 							</a>
 						</li>
 

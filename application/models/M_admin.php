@@ -18,6 +18,10 @@ class m_admin extends CI_Model {
 		return $this->db->query($sql)->result();
 	}
 
+	public function cekAdminById($admin_id){
+		$sql = "SELECT count(admin_id) AS hitung FROM tb_admin WHERE admin_id = $admin_id";
+		return $this->db->query($sql)->result();
+	}
 }
 
 /* End of file m_admin.php */
