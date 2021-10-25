@@ -146,6 +146,12 @@
 								<p>Publikasi</p>
 							</a>
 						</li>
+						<li class="nav-item">
+							<a id="publikasi" href="<?= base_url(); ?>admin/layanan" class="nav-link">
+								<i class="fas fa-users nav-icon"></i>
+								<p>Layanan</p>
+							</a>
+						</li>
 
 					</ul>
 				</nav>

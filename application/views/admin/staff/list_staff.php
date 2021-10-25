@@ -23,10 +23,18 @@
 			<div class="card">
 
 				<div class="card-header">
-					<a href="<?= base_url(); ?>admin/staff/create_staff" class="btn btn-success ">Add New(+)</a>
+					Daftar Staff
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
+					<?= $this->session->flashdata('notif_action'); ?>
+					<div class="row">
+						<div class="col-lg-12 my-1">
+							<a href="<?= base_url() ?>admin/staff/create_staff" class="btn btn-primary btn-flat">
+								<i class="fas fa-plus"></i> Tambah Staff
+							</a>
+						</div>
+					</div>
 					<table id="example" class="table table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
@@ -47,29 +55,29 @@
 							$start = 0;
 							foreach ($allData as $data) {
 								$no = 1 + $start;
-								if ($data->status == "aktif") { 
+								if ($data->status == "aktif") {
 							?>
 
-								<tr>
-									<td><?= $no ?></td>
-									<td><?= $data->nama ?></td>
-									<td><?= $data->pendidikan_terakhir ?></td>
-									<td><?= $data->nip_staff ?></td>
-									<td><?= $data->jabatan ?></td>
-									<td><?= $data->email ?></td>
-									<td><img src="<?= base_url(); ?>upload/staff/<?= $data->foto ?>" class="rounded" width='70' height='90'></td>
-									<td>
-										<center>
-											<?php if ($data->status == "aktif") { ?>
-												<button class="btn btn-info" disabled>Aktif</button>
-											<?php }?>
-										</center>
-									</td>
-									<td>
-										<a href="<?= base_url(); ?>admin/staff/detail_staff?id=<?= $data->staff_id ?>" class="btn btn-info">Detail</a>
-										<!-- <a href="#" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a> -->
-									</td>
-								</tr>
+									<tr>
+										<td><?= $no ?></td>
+										<td><?= $data->nama ?></td>
+										<td><?= $data->pendidikan_terakhir ?></td>
+										<td><?= $data->nip_staff ?></td>
+										<td><?= $data->jabatan ?></td>
+										<td><?= $data->email ?></td>
+										<td><img src="<?= base_url(); ?>upload/staff/<?= $data->foto ?>" class="rounded" width='70' height='90'></td>
+										<td>
+											<center>
+												<?php if ($data->status == "aktif") { ?>
+													<button class="btn btn-info" disabled>Aktif</button>
+												<?php } ?>
+											</center>
+										</td>
+										<td>
+											<a href="<?= base_url(); ?>admin/staff/detail_staff?id=<?= $data->staff_id ?>" class="btn btn-info">Detail</a>
+											<!-- <a href="#" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a> -->
+										</td>
+									</tr>
 
 							<?php $start = 1 + $start;
 								}

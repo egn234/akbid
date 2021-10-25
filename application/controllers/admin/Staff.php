@@ -64,11 +64,13 @@ class staff extends MY_Controller
 		$status = $this->input->post('status');
 
 		$this->M_staff->inputStaff($nama_staff, $pendidikan_terakhir, $nip_staff, $jabatan, $email, $nomor_telp, $id_admin, $foto, $status);
-		$pesan = "Data Berhasil Ditambahkan";
-		echo "<script type='text/javascript'>
-			alert('$pesan');
-			document.location = '" . base_url() . "admin/staff';
-			</script>";
+		$alert = '<div class="alert alert-success alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Data Berhasil Ditambahkan</center>
+    			</div>';
+
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/staff/');
 	}
 
 	public function edit_staff()
@@ -91,11 +93,13 @@ class staff extends MY_Controller
 		$status = $this->input->post('status');
 
 		$this->M_staff->editStaff($nama_staff, $pendidikan_terakhir, $nip_staff, $jabatan, $email, $nomor_telp, $staff_id, $foto, $status);
-		$pesan = "Data Berhasil Di Edit";
-		echo "<script type='text/javascript'>
-			alert('$pesan');
-			document.location = '" . base_url() . "admin/staff';
-			</script>";
+		$alert = '<div class="alert alert-success alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Data Berhasil Diedit</center>
+    			</div>';
+
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/staff/detail_staff?id='.$staff_id);
 	}
 
 }

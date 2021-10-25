@@ -26,41 +26,42 @@
   				</div>
   				<!-- /.card-header -->
   				<div class="card-body">
-  					<div class="form-group row">
-  						<label class="col-sm-3 col-form-label" style="font-size: 19px;">Judul Pencapaian :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" id="nofak" type="text" placeholder="....." name="judul_pencapaian" value="<?= $data[0]->judul_pencapaian ?>" disabled>
+  					<?= $this->session->flashdata('notif_action'); ?>
+  					<div class="row">
+  						<div class="col-lg-8 border-left border-right">
+  							<table class="table">
+  								<tr>
+  									<td width="20%">Judul Pencapaian</td>
+  									<td width="5%">:</td>
+  									<td><?= $data[0]->judul_pencapaian ?></td>
+  								</tr>
+  								<tr>
+  									<td>Deskripsi Pencapaian</td>
+  									<td>:</td>
+  									<td><?= $data[0]->deskripsi_pencapaian ?></td>
+  								</tr>
+  								<?php
+									$val = strtotime($data[0]->date_created);
+									$date = date("Y-m-d", $val);
+									?>
+  								<tr>
+  									<td>Date Created</td>
+  									<td>:</td>
+  									<td><?= $date ?></td>
+  								</tr>
+  							</table>
+  							<hr>
   						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-3 col-form-label" style="font-size: 19px;">Deskripsi Pencapaian :</label>
-  						<div class="col-sm-6">
-  							<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" disabled><?= $data[0]->deskripsi_pencapaian ?></textarea>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Foto :</label>
-  						<div class="col-sm">
-  							<img src="<?= base_url(); ?>upload/pencapaian/<?= $data[0]->foto ?>" class="rounded" width='709px' height='472px'>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-3 col-form-label" style="font-size: 19px;">Date Created :</label>
-  						<div class="col-sm-6">
-  							<?php
-								$val = strtotime($data[0]->date_created);
-								$date = date("Y-m-d", $val);
-								?>
-  							<input class="form-control" id="nofak" type="date" placeholder="....." value="<?= $date ?>" disabled>
+  						<div class="col-lg-4">
+  							<img src="<?= base_url() ?>upload/pencapaian/<?= $data[0]->foto ?>" style="width: 90%; margin: 5%" class="align-middle">
   						</div>
   					</div>
   				</div>
   				<!-- /.card-body -->
   				<!-- card-footer -->
   				<div class="card-footer">
-  					<a href="<?= base_url(); ?>admin/pencapaian/update_pencapaian?id=<?= $data[0]->pencapaian_id ?>" class="btn btn-success">Edit</a>
+  					<a href="<?= base_url(); ?>admin/pencapaian/update_pencapaian?id=<?= $data[0]->pencapaian_id ?>" class="float-right btn btn-info">Edit</a>
   					<a href="<?= base_url(); ?>admin/pencapaian" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
-
   				</div>
   			</div>
 

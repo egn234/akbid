@@ -26,75 +26,74 @@
   				</div>
   				<!-- /.card-header -->
   				<div class="card-body">
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Nama Dosen :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" id="nofak" type="text" value="<?= $data[0]->nama ?>" name="nama_dosen" disabled>
+  					<?= $this->session->flashdata('notif_action'); ?>
+  					<div class="row">
+  						<div class="col-lg-8 border-left border-right">
+  							<table class="table">
+  								<tr>
+  									<td width="20%">Nama Dosen</td>
+  									<td width="5%">:</td>
+  									<td><?= $data[0]->nama ?></td>
+  								</tr>
+  								<tr>
+  									<td>Nidn Dosen</td>
+  									<td>:</td>
+  									<td><?= $data[0]->nidn_dosen ?></td>
+  								</tr>
+  								<tr>
+  									<td>Nip Dosen</td>
+  									<td>:</td>
+  									<td><?= $data[0]->nip_dosen ?></td>
+  								</tr>
+  								<tr>
+  									<td>Prodi</td>
+  									<td>:</td>
+  									<td><?= $data[0]->prodi ?></td>
+  								</tr>
+  								<tr>
+  									<td>Email</td>
+  									<td>:</td>
+  									<td><?= $data[0]->email ?></td>
+  								</tr>
+  								<tr>
+  									<td>Jabatan Struktural</td>
+  									<td>:</td>
+  									<td><?= $data[0]->jabatan_struktural ?></td>
+  								</tr>
+  								<tr>
+  									<td>Nomor telepon</td>
+  									<td>:</td>
+  									<td><?= $data[0]->nomor_telp ?></td>
+  								</tr>
+  								<tr>
+  									<td>Status</td>
+  									<td>:</td>
+  									<td><?= $data[0]->status ?></td>
+  								</tr>
+  							</table>
+  							<hr>
   						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Nidn Dosen :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" id="kodsu" type="number" value="<?= $data[0]->nidn_dosen ?>" name="nidn_dosen" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Nip Dosen :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="number" value="<?= $data[0]->nip_dosen ?>" name="nip_dosen" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Prodi :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="text" value="<?= $data[0]->prodi ?>" name="prodi" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Email :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="email" value="<?= $data[0]->email ?>" name="email" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Jabatan Struktural :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="text" value="<?= $data[0]->jabatan_struktural ?>" name="jabatan_struktural" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Nomor telepon :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="number" value="<?= $data[0]->nomor_telp ?>" name="nomor_telp" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Foto :</label>
-  						<div class="col-sm">
-  							<img src="<?= base_url(); ?>upload/dosen/<?= $data[0]->foto ?>" class="rounded" width='354' height='472'>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Status :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="text" value="<?= $data[0]->status ?>" name="nomor_telp" disabled>
+  						<div class="col-lg-4">
+  							<img src="<?= base_url() ?>upload/dosen/<?= $data[0]->foto ?>" style="width: 90%; margin: 5%" class="align-middle">
   						</div>
   					</div>
   				</div>
-  				<!-- /.card-body -->
-  				<!-- card-footer -->
-  				<div class="card-footer">
-  					<a href="<?= base_url(); ?>admin/dosen/update_dosen?id=<?= $data[0]->dosen_id ?>" class="btn btn-success">Edit</a>
-  					<a href="<?= base_url(); ?>admin/dosen" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
 
-  				</div>
   			</div>
+  			<!-- /.card-body -->
+  			<!-- card-footer -->
+  			<div class="card-footer">
+  				<a href="<?= base_url(); ?>admin/dosen/update_dosen?id=<?= $data[0]->dosen_id ?>" class="float-right btn btn-info">Ubah Data</a>
+  				<a href="<?= base_url(); ?>admin/dosen" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
 
-  			<!-- /.row -->
+  			</div>
   		</div>
-  		<!-- /.container-fluid -->
-  	</section>
-  	<!-- /.content -->
+
+  		<!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
   </div>
 
 

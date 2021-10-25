@@ -60,11 +60,13 @@ class pencapaian extends MY_Controller {
 		$admin_id =	$this->session->userdata('admin_id_sess');
 
 		$this->M_pencapaian->inputPencapaian($judul_pencapaian, $deskripsi_pencapaian, $foto, $date, $admin_id);
-		$pesan = "Data Berhasil Ditambahkan";
-		echo "<script type='text/javascript'>
-			alert('$pesan');
-			document.location = '" . base_url() . "admin/pencapaian';
-			</script>";
+		$alert = '<div class="alert alert-success alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Data Berhasil Ditambahkan</center>
+    			</div>';
+
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/pencapaian');
 	}
 
 	public function edit_pencapaian()
@@ -83,12 +85,13 @@ class pencapaian extends MY_Controller {
 			$this->upload();
 		}
 		$this->M_pencapaian->editPencapaian($pencapaian_id ,$judul_pencapaian, $deskripsi_pencapaian, $foto, $date);
+		$alert = '<div class="alert alert-success alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Data Berhasil Diedit</center>
+    			</div>';
 
-		$pesan = "Data Berhasil Di Edit";
-		echo "<script type='text/javascript'>
-			alert('$pesan');
-			document.location = '" . base_url() . "admin/pencapaian';
-			</script>";
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/pencapaian/detail_pencapaian?id=' . $pencapaian_id);
 	}
 
 	public function delete_pencapaian()
@@ -97,11 +100,13 @@ class pencapaian extends MY_Controller {
 		$foto = $_GET['foto'];
 		unlink("./upload/pencapaian/" . $foto);
 		$this->M_pencapaian->deletePencapaian($id);
-		$pesan = "Data Berhasil Dihapus";
-		echo "<script type='text/javascript'>
-			alert('$pesan');
-			document.location = '" . base_url() . "admin/pencapaian';
-			</script>";
+		$alert = '<div class="alert alert-danger alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Data Berhasil Di Hapus</center>
+    			</div>';
+
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/pencapaian');
 	}
 
 }

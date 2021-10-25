@@ -26,62 +26,57 @@
   				</div>
   				<!-- /.card-header -->
   				<div class="card-body">
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Nama Staff :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" id="nofak" type="text" value="<?= $data[0]->nama ?>" name="nama_staff" disabled>
+  					<?= $this->session->flashdata('notif_action'); ?>
+  					<div class="row">
+  						<div class="col-lg-8 border-left border-right">
+  							<table class="table">
+  								<tr>
+  									<td width="20%">Nama Staff</td>
+  									<td width="5%">:</td>
+  									<td><?= $data[0]->nama ?></td>
+  								</tr>
+  								<tr>
+  									<td>Pendidikan Terakhir</td>
+  									<td>:</td>
+  									<td><?= $data[0]->pendidikan_terakhir ?></td>
+  								</tr>
+  								<tr>
+  									<td>Nip Staff</td>
+  									<td>:</td>
+  									<td><?= $data[0]->nip_staff ?></td>
+  								</tr>
+  								<tr>
+  									<td>Jabatan</td>
+  									<td>:</td>
+  									<td><?= $data[0]->jabatan ?></td>
+  								</tr>
+  								<tr>
+  									<td>Email</td>
+  									<td>:</td>
+  									<td><?= $data[0]->email ?></td>
+  								</tr>
+  								<tr>
+  									<td>Nomor telepon</td>
+  									<td>:</td>
+  									<td><?= $data[0]->nomor_telp ?></td>
+  								</tr>
+  								<tr>
+  									<td>Status</td>
+  									<td>:</td>
+  									<td><?= $data[0]->status ?></td>
+  								</tr>
+  							</table>
+  							<hr>
   						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Pendidikan Terakhir :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" id="kodsu" type="text" value="<?= $data[0]->pendidikan_terakhir ?>" name="pendidikan_terakhir" disabled>
+  						<div class="col-lg-4">
+  							<img src="<?= base_url() ?>upload/staff/<?= $data[0]->foto ?>" style="width: 90%; margin: 5%" class="align-middle">
   						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Nip Staff :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="number" value="<?= $data[0]->nip_staff ?>" name="nip_staff" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Jabatan :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="text" value="<?= $data[0]->jabatan ?>" name="jabatan" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Email :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="email" value="<?= $data[0]->email ?>" name="email" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Nomor telepon :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="number" value="<?= $data[0]->nomor_telp ?>" disabled>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Foto :</label>
-  						<div class="col-sm">
-  							<img src="<?= base_url(); ?>upload/staff/<?= $data[0]->foto ?>" class="rounded" width='354' height='472'>
-  						</div>
-  					</div>
-  					<div class="form-group row">
-  						<label class="col-sm-2 col-form-label" style="font-size: 19px;">Status :</label>
-  						<div class="col-sm-6">
-  							<input class="form-control" type="text" value="<?= $data[0]->status ?>" disabled>
-  						</div>
-  						<!-- <div class="col-sm">
-  							<label class="col-form-label" style="text-transform: uppercase; font-size: 19px;"></label>
-  						</div> -->
   					</div>
   				</div>
   				<!-- /.card-body -->
   				<!-- card-footer -->
   				<div class="card-footer">
-  					<a href="<?= base_url(); ?>admin/staff/update_staff?id=<?= $data[0]->staff_id ?>" class="btn btn-success">Edit</a>
+  					<a href="<?= base_url(); ?>admin/staff/update_staff?id=<?= $data[0]->staff_id ?>" class="float-right btn btn-info">Edit</a>
   					<a href="<?= base_url(); ?>admin/staff" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
 
   				</div>

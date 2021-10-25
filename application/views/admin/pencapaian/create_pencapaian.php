@@ -31,20 +31,25 @@
 						<div class="card-body">
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Judul Pencapaian :</label>
-								<div class="col-sm-6">
+								<div class="col-sm-10">
 									<input class="form-control" id="nofak" type="text" placeholder="....." name="judul_pencapaian" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">deskripsi Pencapaian :</label>
-								<div class="col-sm-6">
+								<div class="col-sm-10">
 									<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" name="deskripsi_pencapaian" required></textarea>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-2 col-form-label">Foto :</label>
-								<div class="col-sm-6">
-									<input class="form-control-sm" type="file" name="foto" id="formFile">
+								<label class="col-sm-2 ">Foto :</label>
+								<div class="col-sm-10">
+									<div class="input-group mb-3">
+										<div class="custom-file">
+											<input type="file" class="custom-file-input" id="fileupload1" name="foto" accept="image/png, image/jpg, image/jpeg">
+											<label class="custom-file-label" for="fileupload1">Pilih Foto...</label>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -58,9 +63,8 @@
 				</div>
 				<!-- /.card-body -->
 				<div class="card-footer">
-					<button type="submit" class="btn btn-success">Save</button>
+					<button type="submit" class="float-right btn btn-info">Save</button>
 					<a href="<?= base_url(); ?>admin/pencapaian" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
-
 				</div>
 				</form>
 			</div>
@@ -83,6 +87,13 @@
 
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
+	$('#fileupload1').on('change', function() {
+		//get the file name
+		var fileName = $(this).val();
+		//replace the "Choose a file" label
+		var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
+		$(this).next('.custom-file-label').html(cleanFileName);
+	});
 </script>
 </body>
 
