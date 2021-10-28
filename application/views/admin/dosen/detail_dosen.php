@@ -107,6 +107,8 @@
 
   <?php $this->load->view('admin/foot_asset'); ?>
   <script type="text/javascript">
+  	document.getElementById("datapegawai").setAttribute("class", " nav-item has-treeview menu-open");
+  	document.getElementById("dosen").setAttribute("class", "nav-link active");
   </script>
   </body>
 

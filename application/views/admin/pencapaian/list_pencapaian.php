@@ -90,6 +90,7 @@
 
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
+	document.getElementById("pencapaian").setAttribute("class", "nav-link active");
 	$(document).ready(function() {
 		$('#example').DataTable();
 	});

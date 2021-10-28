@@ -75,7 +75,7 @@ class layanan extends MY_Controller {
 		$admin_id =	$this->session->userdata('admin_id_sess');
 
 		//file upload
-		define('MB', 1048576);
+		define(MB, 1048576);
 		if ($_FILES['file']['size'] > 4 * MB) { // JIKA FILE DI UPLOAD OLEH USER
 			$alert = '<div class="alert alert-danger alert-dismissible">
         				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

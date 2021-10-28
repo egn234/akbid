@@ -85,7 +85,7 @@
 							<div class="form-group row">
 								<label class="col-sm-2 ">Status :</label>
 								<div class="col-sm-10">
-									<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="status">
+									<select class="form-control form-select-lg mb-3" aria-label=".form-select-lg example" name="status">
 										<option value="aktif" selected>Aktif</option>
 										<option value="non-aktif">Non-Aktif</option>
 									</select>
@@ -121,6 +121,8 @@
 
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
+	document.getElementById("datapegawai").setAttribute("class", " nav-item has-treeview menu-open");
+	document.getElementById("dosen").setAttribute("class", "nav-link active");
 	$('#fileupload1').on('change', function() {
 		//get the file name
 		var fileName = $(this).val();

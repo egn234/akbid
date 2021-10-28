@@ -95,6 +95,7 @@
 
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
+	document.getElementById("layanan").setAttribute("class", "nav-link active");
 	$('#fileupload1').on('change', function() {
 		//get the file name
 		var fileName = $(this).val();
