@@ -23,10 +23,18 @@
 			<div class="card">
 
 				<div class="card-header">
-					<a href="<?= base_url(); ?>admin/pencapaian/create_pencapaian" class="btn btn-success ">Add New(+)</a>
+					Daftar Pencapaian
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
+					<?= $this->session->flashdata('notif_action'); ?>
+					<div class="row">
+						<div class="col-lg-12 my-1">
+							<a href="<?= base_url() ?>admin/pencapaian/create_pencapaian" class="btn btn-primary btn-flat">
+								<i class="fas fa-plus"></i> Tambah Pencapaian
+							</a>
+						</div>
+					</div>
 					<table id="example" class="table table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
@@ -82,6 +90,7 @@
 
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
+	document.getElementById("pencapaian").setAttribute("class", "nav-link active");
 	$(document).ready(function() {
 		$('#example').DataTable();
 	});

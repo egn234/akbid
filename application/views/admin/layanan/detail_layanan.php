@@ -4,12 +4,12 @@
   		<div class="container-fluid">
   			<div class="row mb-2">
   				<div class="col-sm-6">
-  					<h1 class="m-0 text-dark">Data Pencapaian</h1>
+  					<h1 class="m-0 text-dark">Data Layanan</h1>
   				</div><!-- /.col -->
   				<div class="col-sm-6">
   					<ol class="breadcrumb float-sm-right">
   						<li class="breadcrumb-item"><a href="#">Home</a></li>
-  						<li class="breadcrumb-item active">Pencapaian</li>
+  						<li class="breadcrumb-item active">Layanan</li>
   					</ol>
   				</div><!-- /.col -->
   			</div><!-- /.row -->
@@ -22,7 +22,7 @@
   		<div class="container-fluid">
   			<div class="card">
   				<div class="card-header">
-  					<h3 class="card-title">Detail Data Pencapaian</h3>
+  					<h3 class="card-title">Detail Data Layanan</h3>
   				</div>
   				<!-- /.card-header -->
   				<div class="card-body">
@@ -31,14 +31,14 @@
   						<div class="col-lg-8 border-left border-right">
   							<table class="table">
   								<tr>
-  									<td width="20%">Judul Pencapaian</td>
+  									<td width="20%">Judul Layanan</td>
   									<td width="5%">:</td>
-  									<td><?= $data[0]->judul_pencapaian ?></td>
+  									<td><?= $data[0]->judul_layanan ?></td>
   								</tr>
   								<tr>
-  									<td>Deskripsi Pencapaian</td>
+  									<td>Deskripsi Layanan</td>
   									<td>:</td>
-  									<td><?= $data[0]->deskripsi_pencapaian ?></td>
+  									<td><?= $data[0]->deskripsi_layanan ?></td>
   								</tr>
   								<?php
 									$val = strtotime($data[0]->date_created);
@@ -53,15 +53,20 @@
   							<hr>
   						</div>
   						<div class="col-lg-4">
-  							<img src="<?= base_url() ?>upload/pencapaian/<?= $data[0]->foto ?>" style="width: 90%; margin: 5%" class="align-middle">
+  							<center>
+  								<a href="<?= base_url() ?>upload/layanan/<?= $data[0]->file ?>" onclick="return confirm('Download File?')" download>
+  									<img src="<?= base_url() ?>upload/layanan/file.png" style="width: 70%; margin: 5%" class="align-middle">
+  								</a>
+  								<a href="<?= base_url() ?>upload/layanan/<?= $data[0]->file ?>" class="btn btn-info " onclick="return confirm('Download File?')" download>Download</a>
+  							</center>
   						</div>
   					</div>
   				</div>
   				<!-- /.card-body -->
   				<!-- card-footer -->
   				<div class="card-footer">
-  					<a href="<?= base_url(); ?>admin/pencapaian/update_pencapaian?id=<?= $data[0]->pencapaian_id ?>" class="float-right btn btn-info">Edit</a>
-  					<a href="<?= base_url(); ?>admin/pencapaian" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
+  					<a href="<?= base_url(); ?>admin/layanan/update_layanan?id=<?= $data[0]->layanan_id ?>" class="float-right btn btn-info">Edit</a>
+  					<a href="<?= base_url(); ?>admin/layanan" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
   				</div>
   			</div>
 
@@ -83,7 +88,7 @@
 
   <?php $this->load->view('admin/foot_asset'); ?>
   <script type="text/javascript">
-  	document.getElementById("pencapaian").setAttribute("class", "nav-link active");
+  	document.getElementById("layanan").setAttribute("class", "nav-link active");
   </script>
   </body>
 

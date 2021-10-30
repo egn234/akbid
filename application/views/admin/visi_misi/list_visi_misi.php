@@ -4,12 +4,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Data Dosen</h1>
+					<h1 class="m-0 text-dark">Data Visi - Misi</h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active">Dosen</li>
+						<li class="breadcrumb-item active">Visi - Misi</li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -23,15 +23,15 @@
 			<div class="card">
 
 				<div class="card-header">
-					Daftar Dosen
+					Daftar Visi - Misi
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
 					<?= $this->session->flashdata('notif_action'); ?>
 					<div class="row">
 						<div class="col-lg-12 my-1">
-							<a href="<?= base_url() ?>admin/dosen/create_dosen" class="btn btn-primary btn-flat">
-								<i class="fas fa-plus"></i> Tambah Dosen
+							<a href="<?= base_url() ?>admin/visi_misi/create_visi_misi" class="btn btn-primary btn-flat">
+								<i class="fas fa-plus"></i> Tambah Visi - Misi
 							</a>
 						</div>
 					</div>
@@ -39,13 +39,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>Nama</th>
-								<th>Nidn</th>
-								<th>Nip</th>
-								<th>Prodi</th>
-								<th>Email</th>
-								<th>Jabatan</th>
-								<th>Foto</th>
+								<th>Deskripsi Visi - Misi</th>
 								<th>Status</th>
 								<th>Aksi</th>
 							</tr>
@@ -56,33 +50,27 @@
 							$start = 0;
 							foreach ($allData as $data) {
 								$no = 1 + $start;
-								if ($data->status == "aktif") {
 							?>
 
-									<tr>
-										<td><?= $no ?></td>
-										<td><?= $data->nama ?></td>
-										<td><?= $data->nidn_dosen ?></td>
-										<td><?= $data->nip_dosen ?></td>
-										<td><?= $data->prodi ?></td>
-										<td><?= $data->email ?></td>
-										<td><?= $data->jabatan_struktural ?></td>
-										<td><img src="<?= base_url(); ?>upload/dosen/<?= $data->foto ?>" class="rounded" width='70' height='90'></td>
-										<td>
-											<center>
-												<?php if ($data->status == "aktif") { ?>
-													<button class="btn btn-info" disabled>Aktif</button>
-												<?php } ?>
-											</center>
-										</td>
-										<td>
-											<a href="<?= base_url(); ?>admin/dosen/detail_dosen?id=<?= $data->dosen_id ?>" class="btn btn-info">Detail</a>
-											<!-- <a href="#" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a> -->
-										</td>
-									</tr>
+								<tr>
+									<td><?= $no ?></td>
+									<td><?= $data->deskripsi_visi_misi ?></td>
+									<td>
+										<center>
+											<?php if ($data->status == "aktif") { ?>
+												<button class="btn btn-info" disabled>Aktif</button>
+											<?php } else { ?>
+												<button class="btn btn-warning" disabled>Non-Aktif</button>
+											<?php } ?>
+										</center>
+									</td>
+									<td>
+										<a href="<?= base_url(); ?>admin/visi_misi/detail_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-info">Detail</a>
+										<a href="<?= base_url(); ?>admin/visi_misi/delete_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+									</td>
+								</tr>
 
 							<?php $start = 1 + $start;
-								}
 							} ?>
 						</tbody>
 					</table>
@@ -108,8 +96,7 @@
 
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
-	document.getElementById("datapegawai").setAttribute("class", " nav-item has-treeview menu-open");
-	document.getElementById("dosen").setAttribute("class", "nav-link active");
+	document.getElementById("visi_misi").setAttribute("class", "nav-link active");
 	$(document).ready(function() {
 		$('#example').DataTable();
 	});

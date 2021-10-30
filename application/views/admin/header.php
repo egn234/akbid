@@ -121,13 +121,13 @@
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a id="jadsem" href="<?= base_url(); ?>admin/dosen" class="nav-link">
+									<a id="dosen" href="<?= base_url(); ?>admin/dosen" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Data Dosen</p>
 									</a>
 								</li>
 								<li class="nav-item">
-									<a id="jadhis" href="<?= base_url(); ?>admin/staff" class="nav-link">
+									<a id="staff" href="<?= base_url(); ?>admin/staff" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Data Staff</p>
 									</a>
@@ -147,9 +147,21 @@
 							</a>
 						</li>
 						<li class="nav-item">
+<<<<<<< HEAD
 							<a id="posts" href="<?= base_url(); ?>admin/posts" class="nav-link">
 								<i class="fas fa-clipboard-list nav-icon"></i>
 								<p>Posts</p>
+=======
+							<a id="layanan" href="<?= base_url(); ?>admin/layanan" class="nav-link">
+								<i class="fas fa-users nav-icon"></i>
+								<p>Layanan</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a id="visi_misi" href="<?= base_url(); ?>admin/visi_misi" class="nav-link">
+								<i class="fas fa-puzzle-piece nav-icon"></i>
+								<p>Visi - Misi</p>
+>>>>>>> 2b3870485e92894e6e58688445ec5e6c1e183fc8
 							</a>
 						</li>
 
