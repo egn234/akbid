@@ -42,7 +42,7 @@
 				</div>
 				<div class="modal-footer justify-content-between">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-					<a href="<?= base_url() ?>logout/dosen" class="btn btn-danger">Keluar</a>
+					<a href="<?= base_url() ?>logout" class="btn btn-danger">Keluar</a>
 				</div>
 			</div>
 			<!-- /.modal-content -->
@@ -144,6 +144,12 @@
 							<a id="publikasi" href="<?= base_url(); ?>admin/publikasi" class="nav-link">
 								<i class="fas fa-clipboard-list nav-icon"></i>
 								<p>Publikasi</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a id="posts" href="<?= base_url(); ?>admin/posts" class="nav-link">
+								<i class="fas fa-clipboard-list nav-icon"></i>
+								<p>Posts</p>
 							</a>
 						</li>
 
