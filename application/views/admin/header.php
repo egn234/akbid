@@ -147,11 +147,9 @@
 							</a>
 						</li>
 						<li class="nav-item">
-<<<<<<< HEAD
 							<a id="posts" href="<?= base_url(); ?>admin/posts" class="nav-link">
 								<i class="fas fa-clipboard-list nav-icon"></i>
 								<p>Posts</p>
-=======
 							<a id="layanan" href="<?= base_url(); ?>admin/layanan" class="nav-link">
 								<i class="fas fa-users nav-icon"></i>
 								<p>Layanan</p>
@@ -161,7 +159,6 @@
 							<a id="visi_misi" href="<?= base_url(); ?>admin/visi_misi" class="nav-link">
 								<i class="fas fa-puzzle-piece nav-icon"></i>
 								<p>Visi - Misi</p>
->>>>>>> 2b3870485e92894e6e58688445ec5e6c1e183fc8
 							</a>
 						</li>
 
