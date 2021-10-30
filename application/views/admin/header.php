@@ -147,9 +147,12 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a id="posts" href="<?= base_url(); ?>admin/posts" class="nav-link">
+							<a id="posting" href="<?= base_url(); ?>admin/posts" class="nav-link">
 								<i class="fas fa-clipboard-list nav-icon"></i>
 								<p>Posts</p>
+							</a>
+						</li>
+						<li class="nav-item">
 							<a id="layanan" href="<?= base_url(); ?>admin/layanan" class="nav-link">
 								<i class="fas fa-users nav-icon"></i>
 								<p>Layanan</p>

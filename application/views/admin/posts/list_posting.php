@@ -4,12 +4,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Publikasi</h1>
+            <h1 class="m-0 text-dark">Post dan Artikel</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
-              <li class="breadcrumb-item active">Publikasi</li>
+              <li class="breadcrumb-item active">Post dan Artikel</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -22,14 +22,14 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-header">
-            Daftar Publikasi
+            Daftar Post/Artikel
           </div>
           <div class="card-body">
-            <?= $this->session->flashdata('notif_publikasi'); ?>
+            <?= $this->session->flashdata('notif_posting'); ?>
             <div class="row">
               <div class="col-lg-12 my-1">
-                <a href="<?=base_url()?>admin/publikasi/add" class="btn btn-primary btn-flat">
-                  <i class="fas fa-plus"></i> Tambah Publikasi
+                <a href="<?=base_url()?>admin/posts/add" class="btn btn-primary btn-flat">
+                  <i class="fas fa-plus"></i> Tambah Artikel
                 </a>
               </div>
             </div>
@@ -38,28 +38,25 @@
                 <table class="dtable table table-sm table-bordered table-striped">
                   <thead>
                     <th>No.</th>
-                    <th>Judul</th>
-                    <th>Deskripsi</th>
+                    <th>Judul Post</th>
                     <th>Tanggal</th>
+                    <th>Status</th>
                     <th>Aksi</th>
                   </thead>
                   <tbody>
                     <?php $i = 1;?>
-                    <?php foreach($listPub as $a){ ?>
+                    <?php foreach($posting as $a){ ?>
                     <tr>
                       <td><?=$i?></td>
-                      <td><?=$a->judul_publikasi?></td>
-                      <td><?=$a->deskripsi_publikasi?></td>
+                      <td><?=$a->judul_posting?></td>
+                      <td>
+                      	<div class="btn btn-flat btn-secondary">N/A</div>
+                      </td>
                       <td><?=$a->date_created?></td>
                       <td align="center">
-                        <div class="btn-group">
-                          <a href="<?=base_url()?>admin/publikasi/detail/<?=$a->publikasi_id?>" class="btn btn-xs btn-info">
-                            Detail
-                          </a>
-                          <a href="<?= base_url(); ?>admin/publikasi/delete/<?=$a->publikasi_id?>/<?=$a->admin_id?>" class="btn btn-danger btn-xs" onclick="return confirm('Ingin Menghapus?')">
-                            Hapus
-                          </a>
-                        </div>
+                        <a href="<?=base_url()?>admin/posting/edit/<?=$a->posting_id?>" class="btn btn-xs btn-info">
+                          <i class="fas fa-book"></i> Edit
+                        </a>
                       </td>
                     </tr>
                     <?php $i = $i + 1;?>
@@ -83,7 +80,7 @@
 <?php $this->load->view('admin/foot_asset'); ?>
 
 <script type="text/javascript">
-  document.getElementById("publikasi").setAttribute("class", "nav-link active");
+  document.getElementById("posting").setAttribute("class", "nav-link active");
   $('.dtable').dataTable();
 </script>
 
