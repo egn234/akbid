@@ -153,6 +153,12 @@
 							</a>
 						</li>
 						<li class="nav-item">
+							<a id="galerik" href="<?= base_url(); ?>admin/act_gallery" class="nav-link">
+								<i class="fas fa-camera nav-icon"></i>
+								<p>Galeri Kegiatan</p>
+							</a>
+						</li>
+						<li class="nav-item">
 							<a id="layanan" href="<?= base_url(); ?>admin/layanan" class="nav-link">
 								<i class="fas fa-users nav-icon"></i>
 								<p>Layanan</p>
