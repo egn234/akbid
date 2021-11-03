@@ -8,8 +8,8 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
-						<li class="breadcrumb-item"><a href="<?=base_url()?>admin/dosen">Daftar Dosen</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dosen">Daftar Dosen</a></li>
 						<li class="breadcrumb-item active">Tambah Dosen</li>
 					</ol>
 				</div><!-- /.col -->
@@ -28,48 +28,49 @@
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
+					<?= $this->session->flashdata('notif_action'); ?>
 					<form class="form-horizontal" method="POST" action="<?= base_url(); ?>admin/dosen/save_dosen" enctype="multipart/form-data">
 						<div class="card-body">
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Nama Dosen :</label>
 								<div class="col-sm-10">
-									<input class="form-control" id="nofak" type="text" placeholder="....." name="nama_dosen" required>
+									<input class="form-control" id="nofak" value="<?= $this->session->flashdata('nama_dosen'); ?>" type="text" placeholder="....." name="nama_dosen" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Nidn Dosen :</label>
 								<div class="col-sm-10">
-									<input class="form-control" id="kodsu" type="number" placeholder="....." name="nidn_dosen" required>
+									<input class="form-control" id="kodsu" value="<?= $this->session->flashdata('nidn_dosen'); ?>" type="number" placeholder="....." name="nidn_dosen" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Nip Dosen :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="number" placeholder="....." name="nip_dosen" required>
+									<input class="form-control" value="<?= $this->session->flashdata('nip_dosen'); ?>" type="number" placeholder="....." name="nip_dosen" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Prodi :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="text" placeholder="....." name="prodi" required>
+									<input class="form-control" value="<?= $this->session->flashdata('prodi'); ?>" type="text" placeholder="....." name="prodi" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Email :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="email" placeholder="example@gmail.com" name="email" required>
+									<input class="form-control" value="<?= $this->session->flashdata('email'); ?>" type="email" placeholder="example@gmail.com" name="email" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Jabatan Struktural :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="text" placeholder="....." name="jabatan_struktural" required>
+									<input class="form-control" value="<?= $this->session->flashdata('jabatan_struktural'); ?>" type="text" placeholder="....." name="jabatan_struktural" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="number" placeholder="....." name="nomor_telp" required>
+									<input class="form-control" value="<?= $this->session->flashdata('nomor_telp'); ?>" type="number" placeholder="....." name="nomor_telp" required>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -97,7 +98,7 @@
 				</div>
 				<!-- /.card-body -->
 				<div class="card-footer">
-					<button type="submit" class="float-right btn btn-info">Save</button>
+					<button type="submit" class="float-right btn btn-info" onclick="return confirm('Simpan Data?')">Save</button>
 					<a href="<?= base_url(); ?>admin/dosen" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
 
 				</div>

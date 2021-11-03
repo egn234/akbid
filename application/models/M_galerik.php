@@ -13,7 +13,7 @@ class m_galerik extends CI_Model {
 		return $this->db->query($sql)->result();
 	}
 
-	public function insertPosts($judul, $foto){
+	public function insertGaleriK($judul, $foto){
 		$object = array(
 			'judul' => $judul,
 			'foto' => $foto,

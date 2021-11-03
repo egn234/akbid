@@ -8,8 +8,8 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/pencapaian">Daftar Pencapaian</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/pencapaian">Daftar Pencapaian</a></li>
 						<li class="breadcrumb-item active">Tambah Pencapaian</li>
 					</ol>
 				</div><!-- /.col -->
@@ -28,18 +28,19 @@
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
+					<?= $this->session->flashdata('notif_action'); ?>
 					<form class="form-horizontal" method="POST" action="<?= base_url(); ?>admin/pencapaian/save_pencapaian" enctype="multipart/form-data">
 						<div class="card-body">
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Judul Pencapaian :</label>
 								<div class="col-sm-10">
-									<input class="form-control" id="nofak" type="text" placeholder="....." name="judul_pencapaian" required>
+									<input class="form-control" id="nofak" value="<?= $this->session->flashdata('judul_pencapaian'); ?>" type="text" placeholder="....." name="judul_pencapaian" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">deskripsi Pencapaian :</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" name="deskripsi_pencapaian" required></textarea>
+									<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" name="deskripsi_pencapaian" required><?= $this->session->flashdata('deskripsi_pencapaian'); ?></textarea>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -64,7 +65,7 @@
 				</div>
 				<!-- /.card-body -->
 				<div class="card-footer">
-					<button type="submit" class="float-right btn btn-info">Save</button>
+					<button type="submit" class="float-right btn btn-info" onclick="return confirm('Simpan Data?')">Save</button>
 					<a href="<?= base_url(); ?>admin/pencapaian" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
 				</div>
 				</form>

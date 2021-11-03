@@ -110,7 +110,7 @@
 								<p>Dashboard</p>
 							</a>
 						</li>
-
+						<!-- Pegawai -->
 						<li id="datapegawai" class="nav-item has-treeview">
 							<a href="#" class="nav-link">
 								<i class="nav-icon fas fa-user"></i>
@@ -134,6 +134,31 @@
 								</li>
 							</ul>
 						</li>
+						<!-- Galeri -->
+						<li id="datagaleri" class="nav-item has-treeview">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fas fa-camera"></i>
+								<p>
+									Data Galeri
+									<i class="right fas fa-angle-left"></i>
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item">
+									<a id="galerik" href="<?= base_url(); ?>admin/act_gallery" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Galeri Kegiatan</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a id="galeriut" href="<?= base_url(); ?>admin/main_gallery" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Galeri Utama</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+
 						<li class="nav-item">
 							<a id="pencapaian" href="<?= base_url(); ?>admin/pencapaian" class="nav-link">
 								<i class="fas fa-trophy nav-icon"></i>
@@ -153,12 +178,6 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a id="galerik" href="<?= base_url(); ?>admin/act_gallery" class="nav-link">
-								<i class="fas fa-camera nav-icon"></i>
-								<p>Galeri Kegiatan</p>
-							</a>
-						</li>
-						<li class="nav-item">
 							<a id="layanan" href="<?= base_url(); ?>admin/layanan" class="nav-link">
 								<i class="fas fa-users nav-icon"></i>
 								<p>Layanan</p>
@@ -168,6 +187,12 @@
 							<a id="visi_misi" href="<?= base_url(); ?>admin/visi_misi" class="nav-link">
 								<i class="fas fa-puzzle-piece nav-icon"></i>
 								<p>Visi - Misi</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a id="kerja_sama" href="<?= base_url(); ?>admin/kerja_sama" class="nav-link">
+								<i class="fas fa-handshake nav-icon"></i>
+								<p>Kerja Sama</p>
 							</a>
 						</li>
 

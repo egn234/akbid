@@ -88,7 +88,7 @@ class act_gallery extends MY_Controller {
 	}
 
 	function _fileMod(){
-		define('MB', 1084576)
+		define(MB, 1084576);
 		$filter_1 = str_replace(' ', '_', $this->input->post('judul'));
 		$judul = str_replace('.', '_', $filter_1);
 

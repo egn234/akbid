@@ -8,8 +8,8 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/staff">Daftar Staff</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/staff">Daftar Staff</a></li>
 						<li class="breadcrumb-item active">Tambah Staff</li>
 					</ol>
 				</div><!-- /.col -->
@@ -28,42 +28,43 @@
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
+					<?= $this->session->flashdata('notif_action'); ?>
 					<form class="form-horizontal" method="POST" action="<?= base_url(); ?>admin/staff/save_staff" enctype="multipart/form-data">
 						<div class="card-body">
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Nama Staff :</label>
 								<div class="col-sm-10">
-									<input class="form-control" id="nofak" type="text" placeholder="....." name="nama_staff" required>
+									<input class="form-control" id="nofak" value="<?= $this->session->flashdata('nama_staff'); ?>" type="text" placeholder="....." name="nama_staff" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Pendidikan Terakhir :</label>
 								<div class="col-sm-10">
-									<input class="form-control" id="kodsu" type="text" placeholder="....." name="pendidikan_terakhir" required>
+									<input class="form-control" id="kodsu" value="<?= $this->session->flashdata('pendidikan_terakhir'); ?>" type="text" placeholder="....." name="pendidikan_terakhir" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Nip Staff :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="number" placeholder="....." name="nip_staff" required>
+									<input class="form-control" type="number" value="<?= $this->session->flashdata('nip_staff'); ?>" placeholder="....." name="nip_staff" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Jabatan :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="text" placeholder="....." name="jabatan" required>
+									<input class="form-control" type="text" value="<?= $this->session->flashdata('jabatan'); ?>" placeholder="....." name="jabatan" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Email :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="email" placeholder="example@gmail.com" name="email" required>
+									<input class="form-control" type="email" value="<?= $this->session->flashdata('email'); ?>" placeholder="example@gmail.com" name="email" required>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="number" placeholder="....." name="nomor_telp" required>
+									<input class="form-control" type="number" value="<?= $this->session->flashdata('nomor_telp'); ?>" placeholder="....." name="nomor_telp" required>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -91,7 +92,7 @@
 				</div>
 				<!-- /.card-body -->
 				<div class="card-footer">
-					<button type="submit" class="float-right btn btn-info">Save</button>
+					<button type="submit" class="float-right btn btn-info" onclick="return confirm('Simpan Data?')">Save</button>
 					<a href="<?= base_url(); ?>admin/staff" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
 
 				</div>

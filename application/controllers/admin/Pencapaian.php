@@ -37,25 +37,68 @@ class pencapaian extends MY_Controller {
 		$this->load->view('admin/pencapaian/update_pencapaian', $query);
 	}
 
-	public function upload()
+	function _fileMod()
 	{
+		define(MB, 1084576);
+		$filter_1 = str_replace(' ', '_', $this->input->post('judul_pencapaian'));
+		$judul_pencapaian = str_replace('.', '_', $filter_1);
+
 		$config['upload_path'] = './upload/pencapaian/';
-		$config['allowed_types'] = 'jpg|png';
-		$config['max_size'] = 2000;
+		$config['allowed_types'] = 'png|jpg|jpeg';
+		$config['file_name'] = $judul_pencapaian . "_pic";
+		$config['overwrite'] = false;
+		$config['max_size'] = 5 * MB;
 
 		$this->load->library('upload', $config);
+
 		if (!$this->upload->do_upload('foto')) {
+			$alert = '<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <center>Format Foto Tidak Sesuai</center>
+      </div>';
+
+			$this->session->set_flashdata('notif_action', $alert);
+			redirect('admin/main_gallery');
+		} else {
+			return $this->upload->data('file_name');
 		}
 	}
 
 	public function save_pencapaian()
 	{
+		$array_temp = array(
+			'judul_pencapaian' => $this->input->post('judul_pencapaian'),
+			'deskripsi_pencapaian' => $this->input->post('deskripsi_pencapaian'),
+			'date_created' => $this->input->post('date_created')
+		);
 		$judul_pencapaian = $this->input->post('judul_pencapaian');
 		$deskripsi_pencapaian = $this->input->post('deskripsi_pencapaian');
-		//file upload
-		$foto = addslashes($_FILES['foto']['name']);
-		$this->upload();
 		$date = $this->input->post('date_created');
+
+		//upload foto
+		define('MB', 1048576);
+		if ($_FILES['foto']['size'] > 5 * MB) { // JIKA FILE DI UPLOAD OLEH USER
+			$alert = '<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <center>Ukuran File Terlalu Besar</center>
+      </div>';
+
+			$this->session->set_flashdata('notif_action', $alert);
+			$this->session->set_flashdata($array_temp);
+
+			redirect('admin/pencapaian/create_pencapaian');
+		} elseif ($_FILES['foto']['size'] != 0) {
+			$foto = $this->_fileMod();
+		} else {
+			$alert = '<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <center>Harus menyertakan gambar</center>
+      </div>';
+			$this->session->set_flashdata('notif_action', $alert);
+			$this->session->set_flashdata($array_temp);
+
+			redirect('admin/pencapaian/create_pencapaian');
+		}
 		
 		$admin_id =	$this->session->userdata('admin_id_sess');
 
@@ -82,7 +125,19 @@ class pencapaian extends MY_Controller {
 		
 		if ($foto != "") {
 			unlink("./upload/pencapaian/". $old_foto);
-			$this->upload();
+			//upload foto
+			define('MB', 1048576);
+			if ($_FILES['foto']['size'] > 5 * MB) { // JIKA FILE DI UPLOAD OLEH USER
+				$alert = '<div class="alert alert-danger alert-dismissible">
+       						 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        					<center>Ukuran File Terlalu Besar</center>
+    					  </div>';
+
+				$this->session->set_flashdata('notif_action', $alert);
+				redirect('admin/pencapaian/detail_pencapaian?id=' . $pencapaian_id);
+			} elseif ($_FILES['foto']['size'] != 0) {
+				$foto = $this->_fileMod();
+			}
 		}
 		$this->M_pencapaian->editPencapaian($pencapaian_id ,$judul_pencapaian, $deskripsi_pencapaian, $foto, $date);
 		$alert = '<div class="alert alert-success alert-dismissible">
