@@ -13,11 +13,11 @@ class m_publikasi extends CI_Model {
 		return $this->db->query($sql)->result();
 	}
 
-	public function insertPublikasi($judul_publikasi, $deskripsi_publikasi, $foto){
+	public function insertPublikasi($judul_publikasi, $deskripsi_publikasi, $file_upload){
 		$object = array(
 			'judul_publikasi' => $judul_publikasi,
 			'deskripsi_publikasi' => $deskripsi_publikasi,
-			'foto' => $foto,
+			'file_upload' => $file_upload,
 			'date_created' => date('Y-m-d H:i:s'),
 			'admin_id' => $this->session->userdata('admin_id_sess')
 		);
@@ -25,11 +25,11 @@ class m_publikasi extends CI_Model {
 		$this->db->insert('tb_publikasi', $object);
 	}
 
-	public function updatePublikasi($judul_publikasi, $deskripsi_publikasi, $foto, $publikasi_id){
+	public function updatePublikasi($judul_publikasi, $deskripsi_publikasi, $file_upload, $publikasi_id){
 		$sql = "UPDATE tb_publikasi SET
 			judul_publikasi = '$judul_publikasi',
 			deskripsi_publikasi = '$deskripsi_publikasi',
-			foto = '$foto',
+			file_upload = '$file_upload',
 			WHERE publikasi_id = $publikasi_id";
 
 		$this->db->query($sql);

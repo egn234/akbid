@@ -40,6 +40,7 @@
                     <th>No.</th>
                     <th>Judul</th>
                     <th>Deskripsi</th>
+                    <th>File/Lampiran</th>
                     <th>Tanggal</th>
                     <th>Aksi</th>
                   </thead>
@@ -50,6 +51,7 @@
                       <td><?=$i?></td>
                       <td><?=$a->judul_publikasi?></td>
                       <td><?=$a->deskripsi_publikasi?></td>
+                      <td><a href="<?=base_url()?>upload/publikasi/<?=$a->file_upload?>" target="_blank"><?=$a->file_upload?></td>
                       <td><?=$a->date_created?></td>
                       <td align="center">
                         <div class="btn-group">

@@ -28,7 +28,7 @@
           <div class="card-body">
             <?= $this->session->flashdata('notif_publikasi'); ?>
             <div class="row">
-              <div class="col-lg-8 border-left border-right">
+              <div class="col-lg border-left border-right">
                 <table class="table">
                   <tr>
                     <td width="20%">Judul Publikasi</td>
@@ -41,15 +41,21 @@
                     <td><?=$pub->deskripsi_publikasi?></td>
                   </tr>
                   <tr>
+                    <td>File/Lampiran</td>
+                    <td>:</td>
+                    <?php if ($pub->file_upload != null){?>
+                      <td><a href="<?=base_url()?>upload/publikasi/<?=$pub->file_upload?>" target="_blank"><?=$pub->file_upload?></td>
+                    <?php }else{ ?>
+                      <td> - </td>
+                    <?php }?>
+                  </tr>
+                  <tr>
                     <td>Tanggal Unggah</td>
                     <td>:</td>
                     <td><?=$pub->date_created?></td>
                   </tr>
                 </table>
                 <hr>
-              </div>
-              <div class="col-lg-4">
-                <img src="<?=base_url()?>upload/publikasi/<?=$pub->foto?>" style="width: 90%; margin: 5%" class="align-middle">
               </div>
             </div>
           </div>

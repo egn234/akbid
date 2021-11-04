@@ -38,11 +38,11 @@
                 <input id="l_deskripsi" type="text" name="deskripsi_publikasi" class="form-control" value="<?=$editPub->deskripsi_publikasi?>" required>
               </div>
               <div class="form-group">
-                <label>Foto</label>
+                <label>Lampiran/Dokumen</label>
                 <div class="input-group mb-3">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="fileupload1" name="foto" accept="image/png, image/jpg, image/jpeg">
-                    <label class="custom-file-label" for="fileupload1">Pilih Foto...</label>
+                    <input type="file" class="custom-file-input" id="fileupload1" name="file_upload" accept="image/png, image/jpg, image/jpeg, .pdf, .doc, .docx, .ppt, .pptx, .xls, .xlsx">
+                    <label class="custom-file-label" for="fileupload1">Pilih File...</label>
                   </div>
                 </div>
               </div>

@@ -39,7 +39,7 @@ class publikasi extends MY_Controller {
 		$desc = $this->input->post('deskripsi_publikasi');
 
 		define('MB', 1048576);
-		if ($_FILES['foto']['size'] > 4*MB) { // JIKA FILE DI UPLOAD OLEH USER
+		if ($_FILES['file_upload']['size'] > 4*MB) { // JIKA FILE DI UPLOAD OLEH USER
 			$alert = '<div class="alert alert-danger alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <center>Ukuran File Terlalu Besar</center>
@@ -49,13 +49,13 @@ class publikasi extends MY_Controller {
 			$this->session->set_flashdata($array_temp);
 
 			redirect('admin/publikasi/add');
-		}elseif ($_FILES['foto']['size'] != 0) {
-			$foto = $this->_fileMod();
+		}elseif ($_FILES['file_upload']['size'] != 0) {
+			$file_upload = $this->_fileMod();
 		}else{
-			$foto = 'image.jpg';
+			$file_upload = null;
 		}
 
-		$this->m_publikasi->insertPublikasi($jud, $desc, $foto);
+		$this->m_publikasi->insertPublikasi($jud, $desc, $file_upload);
 		$alert = '<div class="alert alert-success alert-dismissible">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <center>Data Publikasi Berhasil Ditambahkan</center>
@@ -72,7 +72,7 @@ class publikasi extends MY_Controller {
 
 	public function edit_proc($publikasi_id){
 		define('MB', 1048576);
-		if ($_FILES['foto']['size'] > 4*MB) { // JIKA FILE DI UPLOAD OLEH USER
+		if ($_FILES['file_upload']['size'] > 4*MB) { // JIKA FILE DI UPLOAD OLEH USER
 			$alert = '<div class="alert alert-danger alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <center>Ukuran File Terlalu Besar</center>
@@ -81,16 +81,16 @@ class publikasi extends MY_Controller {
 			$this->session->set_flashdata('notif_publikasi', $alert);
 
 			redirect('admin/publikasi/edit/'.$publikasi_id);
-		}elseif ($_FILES['foto']['size'] != 0) {
-			$foto = $this->_fileMod();
+		}elseif ($_FILES['file_upload']['size'] != 0) {
+			$file_upload = $this->_fileMod();
 		}else{
-			$foto = $this->m_publikasi->getPublikasiById($publikasi_id)[0]->foto;
+			$file_upload = $this->m_publikasi->getPublikasiById($publikasi_id)[0]->file_upload;
 		}
 
 		$jud = $this->input->post('judul_publikasi');
 		$desc = $this->input->post('deskripsi_publikasi');
 
-		$this->m_publikasi->updatePublikasi($jud, $desc, $foto, $publikasi_id);
+		$this->m_publikasi->updatePublikasi($jud, $desc, $file_upload, $publikasi_id);
 		$alert = '<div class="alert alert-success alert-dismissible">
 	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	        <center>Publikasi berhasil diubah</center>
@@ -127,17 +127,17 @@ class publikasi extends MY_Controller {
 		$judul_publikasi = str_replace('.', '_', $filter_1);
 
 		$config['upload_path'] = './upload/publikasi/';
-		$config['allowed_types'] = 'png|jpg|jpeg';
-		$config['file_name'] = $judul_publikasi."_pic";
-		$config['overwrite'] = false;
+		$config['allowed_types'] = 'png|jpg|jpeg|pdf|doc|docx|ppt|pptx|xls|xlsx';
+		$config['file_name'] = $judul_publikasi;
+		$config['overwrite'] = true;
 		$config['max_size'] = '4000';
 
 		$this->load->library('upload', $config);
 
-		if(!$this->upload->do_upload('foto')){
+		if(!$this->upload->do_upload('file_upload')){
 			$alert = '<div class="alert alert-danger alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <center>Format Foto Tidak Sesuai</center>
+        <center>Format File Tidak Sesuai</center>
       </div>';
 
 			$this->session->set_flashdata('notif_publikasi', $alert);
