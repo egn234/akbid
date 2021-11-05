@@ -8,8 +8,8 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
-						<li class="breadcrumb-item"><a href="<?=base_url()?>admin/layanan">Daftar Layanan</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/layanan">Daftar Layanan</a></li>
 						<li class="breadcrumb-item active">Tambah Layanan</li>
 					</ol>
 				</div><!-- /.col -->
@@ -39,7 +39,7 @@
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">deskripsi Layanan :</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" value="<?= $this->session->flashdata('deskripsi_layanan'); ?>" name="deskripsi_layanan" required></textarea>
+									<textarea id="desc_layanan" name="deskripsi_layanan"><?= $this->session->flashdata('deskripsi_layanan'); ?></textarea>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -95,6 +95,23 @@
 		//replace the "Choose a file" label
 		var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
 		$(this).next('.custom-file-label').html(cleanFileName);
+	});
+	$('#desc_layanan').summernote({
+		placeholder: 'Tulis deskripsi disini....',
+		disableDragAndDrop: true,
+		height: 240,
+		minHeight: 80,
+		maxHeight: 360,
+		toolbar: [
+			// [groupName, [list of button]]
+			['style', ['bold', 'italic', 'underline']],
+			['font', ['superscript', 'subscript']],
+			['fontsize', ['fontsize']],
+			['color', ['color']],
+			['para', ['ul', 'ol', 'paragraph']],
+			['view', ['fullscreen', 'help']],
+			['misc', ['codeview']]
+		]
 	});
 </script>
 </body>

@@ -8,7 +8,7 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
 						<li class="breadcrumb-item active">Staff</li>
 					</ol>
 				</div><!-- /.col -->
@@ -65,7 +65,11 @@
 										<td><?= $data->nip_staff ?></td>
 										<td><?= $data->jabatan ?></td>
 										<td><?= $data->email ?></td>
-										<td><img src="<?= base_url(); ?>upload/staff/<?= $data->foto ?>" class="rounded" width='70' height='90'></td>
+										<td>
+											<center>
+												<img src="<?= base_url(); ?>upload/staff/<?= $data->foto ?>" class="rounded" style="max-height: 128px; max-width: 128px;">
+											</center>
+										</td>
 										<td>
 											<center>
 												<?php if ($data->status == "aktif") { ?>

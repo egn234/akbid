@@ -8,7 +8,7 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
 						<li class="breadcrumb-item active">Pencapaian</li>
 					</ol>
 				</div><!-- /.col -->
@@ -57,7 +57,11 @@
 									<td><?= $no ?></td>
 									<td><?= $data->judul_pencapaian ?></td>
 									<td><?= $data->deskripsi_pencapaian ?></td>
-									<td><img src="<?= base_url(); ?>upload/pencapaian/<?= $data->foto ?>" class="rounded" width='70' height='90'></td>
+									<td>
+										<center>
+											<img src="<?= base_url(); ?>upload/pencapaian/<?= $data->foto ?>" class="rounded" style="max-height: 128px; max-width: 128px;">
+										</center>
+									</td>
 									<td>
 										<a href="<?= base_url(); ?>admin/pencapaian/detail_pencapaian?id=<?= $data->pencapaian_id ?>" class="btn btn-info">Detail</a>
 										<a href="<?= base_url(); ?>admin/pencapaian/delete_pencapaian?id=<?= $data->pencapaian_id ?>&foto=<?= $data->foto ?>" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
