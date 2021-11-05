@@ -33,7 +33,7 @@
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">deskripsi Kerjasama :</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" name="deskripsi_kerja_sama" required></textarea>
+									<textarea id="desc_kerja_sama" name="deskripsi_kerja_sama"><?= $this->session->flashdata('deskripsi_posting'); ?></textarea>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -81,6 +81,23 @@
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
 	document.getElementById("kerja_sama").setAttribute("class", "nav-link active");
+	$('#desc_kerja_sama').summernote({
+		placeholder: 'Tulis deskripsi disini....',
+		disableDragAndDrop: true,
+		height: 240,
+		minHeight: 80,
+		maxHeight: 360,
+		toolbar: [
+			// [groupName, [list of button]]
+			['style', ['bold', 'italic', 'underline']],
+			['font', ['superscript', 'subscript']],
+			['fontsize', ['fontsize']],
+			['color', ['color']],
+			['para', ['ul', 'ol', 'paragraph']],
+			['view', ['fullscreen', 'help']],
+			['misc', ['codeview']]
+		]
+	});
 </script>
 </body>
 
