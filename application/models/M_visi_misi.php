@@ -16,6 +16,12 @@
 		return $this->db->query($sql)->result();
 	}
 
+	public function getVisimisiByStatus($status)
+	{
+		$sql = "SELECT * FROM tb_visi_misi WHERE status = $status";
+		return $this->db->query($sql)->result();
+	}
+
 	public function	inputVisimisi($deskripsi_visi_misi, $date, $status, $admin_id)
 	{
 		$data = array(

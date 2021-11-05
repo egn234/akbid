@@ -8,7 +8,7 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
 						<li class="breadcrumb-item active">Visi - Misi</li>
 					</ol>
 				</div><!-- /.col -->
@@ -39,7 +39,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>Deskripsi Visi - Misi</th>
+								<th style="max-width: 240px;">Deskripsi Visi - Misi</th>
 								<th>Status</th>
 								<th>Aksi</th>
 							</tr>

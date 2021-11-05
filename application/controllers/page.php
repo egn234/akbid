@@ -2,13 +2,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class page extends CI_Controller {
-
+	
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_visi_misi');
+		
+	}
+	
 	public function index(){
 		$this->load->view('homepage/home');
 	}
 
 	public function about()
 	{
+		$data = $this->M_visi_misi->getAllVisimisi();
+		$this->session->set_userdata('all_data', $data);
 		$this->load->view('homepage/about');
 	}
 
@@ -19,6 +28,7 @@ class page extends CI_Controller {
 
 	public function blog()
 	{
+		
 		$this->load->view('homepage/blog');
 	}
 	
