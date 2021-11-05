@@ -42,7 +42,7 @@
 				</div>
 				<div class="modal-footer justify-content-between">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-					<a href="<?= base_url() ?>logout" class="btn btn-danger">Keluar</a>
+					<a href="<?= base_url() ?>admin/logout" class="btn btn-danger">Keluar</a>
 				</div>
 			</div>
 			<!-- /.modal-content -->

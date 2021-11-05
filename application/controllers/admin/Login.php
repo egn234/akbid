@@ -5,6 +5,7 @@ class login extends MY_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		parent::loginAuth();
 	}
 
 	public function index(){

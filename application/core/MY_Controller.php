@@ -10,6 +10,12 @@ class MY_controller extends CI_Controller {
 		$this->load->model('m_admin');
 	}
 
+	public function loginAuth(){
+		if (!is_null($this->session->userdata('admin_id_sess'))) {
+			redirect('admin/dashboard');
+		}
+	}
+
 	public function adminAuth(){
 		if (is_null($this->session->userdata('admin_id_sess'))) {
 			$this->alertLogin('admin');
