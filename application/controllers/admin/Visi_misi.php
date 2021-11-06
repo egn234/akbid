@@ -37,12 +37,12 @@
 
 	public function save_visi_misi()
 	{
+		$this->M_visi_misi->turnOffAll();
 		$deskripsi_visi_misi = $this->input->post('deskripsi_visi_misi');
 		$date = $this->input->post('date_created');
-		$status = $this->input->post('status');
 		$admin_id =	$this->session->userdata('admin_id_sess');
 
-		$this->M_visi_misi->inputVisimisi($deskripsi_visi_misi, $date, $status, $admin_id);
+		$this->M_visi_misi->inputVisimisi($deskripsi_visi_misi, $date, $admin_id);
 		$alert = '<div class="alert alert-success alert-dismissible">
       				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       				<center>Data Berhasil Ditambahkan</center>
@@ -55,13 +55,12 @@
 	public function edit_visi_misi()
 	{
 		$visi_misi_id = $this->input->post('visi_misi_id');
-		$status = $this->input->post('status');
 		$deskripsi_visi_misi = $this->input->post('deskripsi_visi_misi');
 		$date = $this->input->post('date_created');
 
 		$old_file = $this->input->post('old_file');
 
-		$this->M_visi_misi->editVisimisi($visi_misi_id ,$deskripsi_visi_misi, $date, $status);
+		$this->M_visi_misi->editVisimisi($visi_misi_id ,$deskripsi_visi_misi, $date);
 		$alert = '<div class="alert alert-success alert-dismissible">
       				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       				<center>Data Berhasil Diedit</center>
@@ -69,6 +68,19 @@
 
 		$this->session->set_flashdata('notif_action', $alert);
 		redirect('admin/visi_misi/detail_visi_misi?id=' . $visi_misi_id);
+	}
+
+	public function change_status($visi_misi_id)
+	{
+		$this->M_visi_misi->turnOff($visi_misi_id);
+		$this->M_visi_misi->turnOn($visi_misi_id);
+
+		$alert = '<div class="alert alert-success alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Status Berhasil DiAktifkan</center>
+    			</div>';
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/visi_misi');
 	}
 
 	public function delete_visi_misi()

@@ -39,12 +39,12 @@ class kerja_sama extends MY_Controller {
 
 	public function save_kerja_sama()
 	{
+		$this->M_kerja_sama->turnOffAll();
 		$deskripsi_kerja_sama = $this->input->post('deskripsi_kerja_sama');
 		$date = $this->input->post('date_created');
-		$status = $this->input->post('status');
 		$admin_id =	$this->session->userdata('admin_id_sess');
 
-		$this->M_kerja_sama->inputKerjasama($deskripsi_kerja_sama, $date, $status, $admin_id);
+		$this->M_kerja_sama->inputKerjasama($deskripsi_kerja_sama, $date, $admin_id);
 		$alert = '<div class="alert alert-success alert-dismissible">
       				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       				<center>Data Berhasil Ditambahkan</center>
@@ -57,13 +57,12 @@ class kerja_sama extends MY_Controller {
 	public function edit_kerja_sama()
 	{
 		$kerja_sama_id = $this->input->post('kerja_sama_id');
-		$status = $this->input->post('status');
 		$deskripsi_kerja_sama = $this->input->post('deskripsi_kerja_sama');
 		$date = $this->input->post('date_created');
 
 		$old_file = $this->input->post('old_file');
 
-		$this->M_kerja_sama->editKerjasama($kerja_sama_id, $deskripsi_kerja_sama, $date, $status);
+		$this->M_kerja_sama->editKerjasama($kerja_sama_id, $deskripsi_kerja_sama, $date);
 		$alert = '<div class="alert alert-success alert-dismissible">
       				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       				<center>Data Berhasil Diedit</center>
@@ -71,6 +70,19 @@ class kerja_sama extends MY_Controller {
 
 		$this->session->set_flashdata('notif_action', $alert);
 		redirect('admin/kerja_sama/detail_kerja_sama?id=' . $kerja_sama_id);
+	}
+
+	public function change_status($kerja_sama_id)
+	{
+		$this->M_kerja_sama->turnOff($kerja_sama_id);
+		$this->M_kerja_sama->turnOn($kerja_sama_id);
+
+		$alert = '<div class="alert alert-success alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Status Berhasil DiAktifkan</center>
+    			</div>';
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/kerja_sama');
 	}
 
 	public function delete_kerja_sama()

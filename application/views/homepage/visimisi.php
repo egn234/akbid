@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<?php $data['title'] = "Akbid - About" ?>
+	<?php $data['title'] = "Akbid - Visi-Misi" ?>
 	<?php $this->load->view('homepage/header_assets', $data); ?>
 </head>
 

@@ -36,7 +36,7 @@
 									<textarea id="desc_kerja_sama" name="deskripsi_kerja_sama"><?= $this->session->flashdata('deskripsi_posting'); ?></textarea>
 								</div>
 							</div>
-							<div class="form-group row">
+							<!-- <div class="form-group row">
 								<label class="col-sm-2 col-form-label">Status :</label>
 								<div class="col-sm-10">
 									<select class="form-control" aria-label="Default select example" name="status">
@@ -45,7 +45,7 @@
 										<option value="non-aktif">Non-Aktif</option>
 									</select>
 								</div>
-							</div>
+							</div> -->
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Tanggal :</label>
 								<div class="col-sm-6">

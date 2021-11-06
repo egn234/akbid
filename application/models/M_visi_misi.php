@@ -6,8 +6,9 @@
 
 	public function getAllVisimisi()
 	{
-		$sql = "SELECT * FROM tb_visi_misi";
-		return $this->db->query($sql)->result();
+		$this->db->order_by('status', 'ASC');
+		$query = $this->db->get('tb_visi_misi');
+		return $query->result();
 	}
 
 	public function getVisimisiById($visi_misi_id)
@@ -22,24 +23,23 @@
 		return $this->db->query($sql)->result();
 	}
 
-	public function	inputVisimisi($deskripsi_visi_misi, $date, $status, $admin_id)
+	public function	inputVisimisi($deskripsi_visi_misi, $date, $admin_id)
 	{
 		$data = array(
 			'deskripsi_visi_misi' => $deskripsi_visi_misi,
 			'date_created' => $date,
-			'status' => $status,
+			'status' => 'aktif',
 			'admin_id' => $admin_id
 		);
 
 		$this->db->insert('tb_visi_misi', $data);
 	}
 
-	public function	editVisimisi($visi_misi_id, $deskripsi_visi_misi, $date, $status)
+	public function	editVisimisi($visi_misi_id, $deskripsi_visi_misi, $date)
 	{
 		$data = array(
 			'deskripsi_visi_misi' => $deskripsi_visi_misi,
-			'date_created' => $date,
-			'status' => $status
+			'date_created' => $date
 		);
 		$this->db->where('visi_misi_id', $visi_misi_id);
 		$this->db->update('tb_visi_misi', $data);
@@ -49,6 +49,24 @@
 	{
 		$this->db->where('visi_misi_id', $visi_misi_id);
 		$this->db->delete('tb_visi_misi');
+	}
+
+	public function turnOn($visi_misi_id)
+	{
+		$sql = "UPDATE tb_visi_misi SET status ='aktif' WHERE visi_misi_id = $visi_misi_id";
+		return $this->db->query($sql);
+	}
+
+	public function turnOff($visi_misi_id)
+	{
+		$sql = "UPDATE tb_visi_misi SET status ='non-aktif' WHERE visi_misi_id != $visi_misi_id";
+		return $this->db->query($sql);
+	}
+
+	public function turnOffAll()
+	{
+		$sql = "UPDATE tb_visi_misi SET status ='non-aktif'";
+		return $this->db->query($sql);
 	}
 	
 	}

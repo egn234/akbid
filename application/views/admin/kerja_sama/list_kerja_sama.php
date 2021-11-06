@@ -39,7 +39,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>Deskripsi Kerjasama</th>
+								<th style="max-width: 280px;">Deskripsi Kerjasama</th>
 								<th>Status</th>
 								<th>Aksi</th>
 							</tr>
@@ -50,23 +50,38 @@
 							$start = 0;
 							foreach ($allData as $data) {
 								$no = 1 + $start;
+								$countDesc = count(explode(" ", $data->deskripsi_kerja_sama));
 							?>
 
 								<tr>
 									<td><?= $no ?></td>
-									<td><?= $data->deskripsi_kerja_sama ?></td>
+									<td>
+										<?php
+										if ($countDesc > 50) {
+											$slice = array_slice(explode(" ", $data->deskripsi_kerja_sama), 0, 51);
+										?>
+											<?= implode(" ", $slice); ?>......
+										<?php
+										} else {
+											echo $data->deskripsi_kerja_sama;
+										}
+										?>
+									</td>
 									<td>
 										<center>
 											<?php if ($data->status == "aktif") { ?>
-												<button class="btn btn-info" disabled>Aktif</button>
+												<button class="btn btn-sm btn-info" disabled>Aktif</button>
 											<?php } else { ?>
-												<button class="btn btn-warning" disabled>Non-Aktif</button>
+												<button class="btn btn-sm btn-warning" disabled>Non-Aktif</button>
 											<?php } ?>
 										</center>
 									</td>
 									<td>
-										<a href="<?= base_url(); ?>admin/kerja_sama/detail_kerja_sama?id=<?= $data->kerja_sama_id ?>" class="btn btn-info">Detail</a>
-										<a href="<?= base_url(); ?>admin/kerja_sama/delete_kerja_sama?id=<?= $data->kerja_sama_id ?>" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+										<?php if ($data->status == "non-aktif") { ?>
+											<a href="<?= base_url(); ?>admin/kerja_sama/change_status/<?= $data->kerja_sama_id ?>" class="btn btn-xs btn-success">Aktifkan</a>
+										<?php } ?>
+										<a href="<?= base_url(); ?>admin/kerja_sama/detail_kerja_sama?id=<?= $data->kerja_sama_id ?>" class="btn btn-xs btn-info">Detail</a>
+										<a href="<?= base_url(); ?>admin/kerja_sama/delete_kerja_sama?id=<?= $data->kerja_sama_id ?>" class="btn btn-xs btn-danger" onclick="return confirm('Ingin Menghapus?')">Hapus</a>
 									</td>
 								</tr>
 

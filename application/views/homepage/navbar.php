@@ -12,7 +12,13 @@
 					<a class="nav-link" href="<?= base_url(); ?>">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('page/about'); ?>">About</a>
+					<a class="nav-link" href="<?= base_url('page/Visimisi'); ?>">Visi-Misi</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('page/kerjasama'); ?>">Kerjasama</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('page/blog'); ?>">Blog</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,9 +28,6 @@
 						<a class="dropdown-item" href="#">Dosen</a>
 						<a class="dropdown-item" href="#">Staff</a>
 					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('page/blog'); ?>">Blog</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('page/contact'); ?>">Contact</a>

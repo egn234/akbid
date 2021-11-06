@@ -7,6 +7,7 @@ class page extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_visi_misi');
+		$this->load->model('M_kerja_sama');
 		
 	}
 	
@@ -14,11 +15,18 @@ class page extends CI_Controller {
 		$this->load->view('homepage/home');
 	}
 
-	public function about()
+	public function Visimisi()
 	{
 		$data = $this->M_visi_misi->getAllVisimisi();
 		$this->session->set_userdata('all_data', $data);
-		$this->load->view('homepage/about');
+		$this->load->view('homepage/visimisi');
+	}
+
+	public function Kerjasama()
+	{
+		$data = $this->M_kerja_sama->getAllKerjasama();
+		$this->session->set_userdata('all_data', $data);
+		$this->load->view('homepage/kerja_sama');
 	}
 
 	public function contact()

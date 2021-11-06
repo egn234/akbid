@@ -39,7 +39,7 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th style="max-width: 240px;">Deskripsi Visi - Misi</th>
+								<th style="max-width: 280px;">Deskripsi Visi - Misi</th>
 								<th>Status</th>
 								<th>Aksi</th>
 							</tr>
@@ -50,11 +50,23 @@
 							$start = 0;
 							foreach ($allData as $data) {
 								$no = 1 + $start;
+								$countDesc = count(explode(" ", $data->deskripsi_visi_misi));
 							?>
 
 								<tr>
 									<td><?= $no ?></td>
-									<td><?= $data->deskripsi_visi_misi ?></td>
+									<td>
+										<?php
+										if ($countDesc > 50) {
+											$slice = array_slice(explode(" ", $data->deskripsi_visi_misi), 0, 51);
+										?>
+											<?= implode(" ", $slice); ?>......
+										<?php
+										} else {
+											echo $data->deskripsi_visi_misi;
+										}
+										?>
+									</td>
 									<td>
 										<center>
 											<?php if ($data->status == "aktif") { ?>
@@ -65,8 +77,11 @@
 										</center>
 									</td>
 									<td>
-										<a href="<?= base_url(); ?>admin/visi_misi/detail_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-info">Detail</a>
-										<a href="<?= base_url(); ?>admin/visi_misi/delete_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+										<?php if ($data->status == "non-aktif") { ?>
+											<a href="<?= base_url(); ?>admin/visi_misi/change_status/<?= $data->visi_misi_id ?>" class="btn btn-xs btn-success">Aktifkan</a>
+										<?php } ?>
+										<a href="<?= base_url(); ?>admin/visi_misi/detail_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-info">Detail</a>
+										<a href="<?= base_url(); ?>admin/visi_misi/delete_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
 									</td>
 								</tr>
 

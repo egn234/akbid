@@ -34,10 +34,10 @@
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Deskripsi Visi-Misi :</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" name="deskripsi_kerja_sama" required><?= $data[0]->deskripsi_kerja_sama ?></textarea>
+									<textarea id="desc_kerja_sama" name="deskripsi_kerja_sama" required><?= $data[0]->deskripsi_kerja_sama ?></textarea>
 								</div>
 							</div>
-							<div class="form-group row">
+							<!-- <div class="form-group row">
 								<label class="col-sm-2 ">Status :</label>
 								<div class="col-sm-10">
 									<select class="form-control form-select-lg mb-3" aria-label=".form-select-lg example" name="status">
@@ -50,7 +50,7 @@
 										<?php } ?>
 									</select>
 								</div>
-							</div>
+							</div> -->
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Tanggal :</label>
 								<div class="col-sm-6">
@@ -91,6 +91,23 @@
 <?php $this->load->view('admin/foot_asset'); ?>
 <script type="text/javascript">
 	document.getElementById("kerja_sama").setAttribute("class", "nav-link active");
+	$('#desc_kerja_sama').summernote({
+		placeholder: 'Tulis deskripsi disini....',
+		disableDragAndDrop: true,
+		height: 240,
+		minHeight: 80,
+		maxHeight: 360,
+		toolbar: [
+			// [groupName, [list of button]]
+			['style', ['bold', 'italic', 'underline']],
+			['font', ['superscript', 'subscript']],
+			['fontsize', ['fontsize']],
+			['color', ['color']],
+			['para', ['ul', 'ol', 'paragraph']],
+			['view', ['fullscreen', 'help']],
+			['misc', ['codeview']]
+		]
+	});
 </script>
 </body>
 

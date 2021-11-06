@@ -37,7 +37,7 @@
 									<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" name="deskripsi_visi_misi" required><?= $data[0]->deskripsi_visi_misi ?></textarea>
 								</div>
 							</div>
-							<div class="form-group row">
+							<!-- <div class="form-group row">
 								<label class="col-sm-2 ">Status :</label>
 								<div class="col-sm-10">
 									<select class="form-control form-select-lg mb-3" aria-label=".form-select-lg example" name="status">
@@ -50,7 +50,7 @@
 										<?php } ?>
 									</select>
 								</div>
-							</div>
+							</div> -->
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Tanggal :</label>
 								<div class="col-sm-6">
