@@ -8,6 +8,7 @@ class page extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_visi_misi');
 		$this->load->model('M_kerja_sama');
+		$this->load->model('M_posting');
 		
 	}
 	
@@ -34,15 +35,28 @@ class page extends CI_Controller {
 		$this->load->view('homepage/contact');
 	}
 
-	public function blog()
+	//Postingan
+	public function posts()
 	{
-		
-		$this->load->view('homepage/blog');
+		$batas = 9;
+		$halaman = isset($_GET['halaman'])?(int)$_GET['halaman'] : 1;
+		$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+
+		$jumlah_data = count($this->M_posting->getAllPosts());
+		$total_halaman = ceil($jumlah_data/$batas);
+		$data = $this->M_posting->getPostsWithLimit($halaman_awal, $batas);
+		$this->session->set_userdata('all_data', $data);
+		$query['halaman'] = $halaman;
+		$query['total_halaman'] = $total_halaman;
+		$this->load->view('homepage/posts', $query);
 	}
-	
-	public function blog_details()
+	//Detail Postingan
+	public function posts_details($id_posts)
 	{
-		$this->load->view('homepage/blog_details');
+		$recentPosts = $this->M_posting->getPostsWithLimit(0,3);
+		$this->session->set_userdata('recentData', $recentPosts);
+		$query['data'] = $this->M_posting->getPostsById($id_posts);
+		$this->load->view('homepage/posts_details', $query);
 		
 	}
 

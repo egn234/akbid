@@ -118,6 +118,8 @@ class posts extends MY_Controller {
 			return $this->upload->data('file_name');
 		}
 	}
+
+	
 }
 
 /* End of file posts.php */
