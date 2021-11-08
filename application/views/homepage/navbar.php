@@ -20,13 +20,16 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('page/posts'); ?>">Posts</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('page/layanan'); ?>">Layanan</a>
+				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Pegawai
 					</a>
 					<div class="dropdown-menu" aria-labelledby="services">
-						<a class="dropdown-item" href="#">Dosen</a>
-						<a class="dropdown-item" href="#">Staff</a>
+						<a class="dropdown-item" href="<?= base_url('page/dosen'); ?>">Dosen</a>
+						<a class="dropdown-item" href="<?= base_url('page/staff'); ?>">Staff</a>
 					</div>
 				</li>
 				<li class="nav-item">
