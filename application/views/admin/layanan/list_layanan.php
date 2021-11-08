@@ -8,7 +8,7 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
 						<li class="breadcrumb-item active">Data Layanan</li>
 					</ol>
 				</div><!-- /.col -->
@@ -50,12 +50,24 @@
 							$start = 0;
 							foreach ($allData as $data) {
 								$no = 1 + $start;
+								$countDesc = count(explode(" ", $data->deskripsi_layanan));
 							?>
 
 								<tr>
 									<td><?= $no ?></td>
 									<td><?= $data->judul_layanan ?></td>
-									<td><?= $data->deskripsi_layanan ?></td>
+									<td>
+										<?php
+										if ($countDesc > 50) {
+											$slice = array_slice(explode(" ", $data->deskripsi_layanan), 0, 51);
+										?>
+											<?= implode(" ", $slice); ?>......
+										<?php
+										} else {
+											echo $data->deskripsi_layanan;
+										}
+										?>
+									</td>
 									<td>
 										<a href="<?= base_url(); ?>admin/layanan/detail_layanan?id=<?= $data->layanan_id ?>" class="btn btn-info">Detail</a>
 										<a href="<?= base_url(); ?>admin/layanan/delete_layanan?id=<?= $data->layanan_id ?>&file=<?= $data->file ?>" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>

@@ -11,6 +11,7 @@ class page extends CI_Controller {
 		$this->load->model('M_posting');
 		$this->load->model('M_publikasi');
 		$this->load->model('M_pencapaian');
+		$this->load->model('M_layanan');
 		$this->load->model('M_dosen');
 		$this->load->model('M_staff');
 		
@@ -110,6 +111,30 @@ class page extends CI_Controller {
 		$this->session->set_userdata('recentData', $recentPencapaian);
 		$query['data'] = $this->M_pencapaian->getPencapaianById($id_pencapaian);
 		$this->load->view('homepage/pencapaian_details', $query);
+	}
+
+	//layanan
+	public function layanan()
+	{
+		$batas = 9;
+		$halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
+		$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+
+		$jumlah_data = count($this->M_layanan->getAllLayanan());
+		$total_halaman = ceil($jumlah_data / $batas);
+		$data = $this->M_layanan->getLayananWithLimit($halaman_awal, $batas);
+		$this->session->set_userdata('all_data', $data);
+		$query['halaman'] = $halaman;
+		$query['total_halaman'] = $total_halaman;
+		$this->load->view('homepage/layanan', $query);
+	}
+	//Detail Layanan
+	public function layanan_details($id_layanan)
+	{
+		$recentLayanan = $this->M_layanan->getLayananWithLimit(0, 3);
+		$this->session->set_userdata('recentData', $recentLayanan);
+		$query['data'] = $this->M_layanan->getLayananById($id_layanan);
+		$this->load->view('homepage/layanan_details', $query);
 	}
 
 	//Dosen
