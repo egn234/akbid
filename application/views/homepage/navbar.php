@@ -32,6 +32,15 @@
 						<a class="dropdown-item" href="<?= base_url('page/staff'); ?>">Staff</a>
 					</div>
 				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Prestasi
+					</a>
+					<div class="dropdown-menu" aria-labelledby="services">
+						<a class="dropdown-item" href="<?= base_url('page/publikasi'); ?>">Publikasi</a>
+						<a class="dropdown-item" href="<?= base_url('page/pencapaian'); ?>">Pencapaian</a>
+					</div>
+				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('page/contact'); ?>">Contact</a>
 				</li>

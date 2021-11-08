@@ -9,6 +9,8 @@ class page extends CI_Controller {
 		$this->load->model('M_visi_misi');
 		$this->load->model('M_kerja_sama');
 		$this->load->model('M_posting');
+		$this->load->model('M_publikasi');
+		$this->load->model('M_pencapaian');
 		$this->load->model('M_dosen');
 		$this->load->model('M_staff');
 		
@@ -60,6 +62,54 @@ class page extends CI_Controller {
 		$query['data'] = $this->M_posting->getPostsById($id_posts);
 		$this->load->view('homepage/posts_details', $query);
 		
+	}
+
+	//Publikasi
+	public function publikasi()
+	{
+		$batas = 9;
+		$halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
+		$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+
+		$jumlah_data = count($this->M_publikasi->getAllPublikasi());
+		$total_halaman = ceil($jumlah_data / $batas);
+		$data = $this->M_publikasi->getPublikasiWithLimit($halaman_awal, $batas);
+		$this->session->set_userdata('all_data', $data);
+		$query['halaman'] = $halaman;
+		$query['total_halaman'] = $total_halaman;
+		$this->load->view('homepage/publikasi', $query);
+	}
+	//Detail Publikasi
+	public function publikasi_details($id_publikasi)
+	{
+		$recentPublikasi = $this->M_publikasi->getPublikasiWithLimit(0, 3);
+		$this->session->set_userdata('recentData', $recentPublikasi);
+		$query['data'] = $this->M_publikasi->getPublikasiById($id_publikasi);
+		$this->load->view('homepage/publikasi_details', $query);
+	}
+
+	//pencapaian
+	public function pencapaian()
+	{
+		$batas = 9;
+		$halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
+		$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+
+		$jumlah_data = count($this->M_pencapaian->getAllPencapaian());
+		$total_halaman = ceil($jumlah_data / $batas);
+		$data = $this->M_pencapaian->getPencapaianWithLimit($halaman_awal, $batas);
+		$this->session->set_userdata('all_data', $data);
+		$query['halaman'] = $halaman;
+		$query['total_halaman'] = $total_halaman;
+		$this->load->view('homepage/pencapaian', $query);
+	}
+	//Detail Pencapaian
+	public function pencapaian_details($id_pencapaian)
+	{
+		$recentPencapaian = $this->M_pencapaian->getPencapaianWithLimit(0, 3);
+		$this->session->set_userdata('recentData', $recentPencapaian);
+		$query['data'] = $this->M_pencapaian->getPencapaianById($id_pencapaian);
+		$this->load->view('homepage/pencapaian_details', $query);
 	}
 
 	//Dosen

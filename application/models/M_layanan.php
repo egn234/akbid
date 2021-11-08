@@ -49,6 +49,14 @@ class m_layanan extends CI_Model {
 		$this->db->delete('tb_layanan');
 	}
 
+	public function getLayananWithLimit($halaman_awal, $batas)
+	{
+		$this->db->order_by('date_created', 'DESC');
+		$query = $this->db->get('tb_layanan', $batas, $halaman_awal);
+		// $sql = "SELECT * FROM tb_posting LIMIT $halaman_awal, $batas";
+		return $query->result();
+	}
+
 }
 
 /* End of file M_layanan.php */

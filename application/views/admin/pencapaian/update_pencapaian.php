@@ -8,8 +8,8 @@
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/pencapaian">Daftar Pencapaian</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/pencapaian">Daftar Pencapaian</a></li>
 						<li class="breadcrumb-item active">Ubah Pencapaian</li>
 					</ol>
 				</div><!-- /.col -->
@@ -40,7 +40,7 @@
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Deskripsi Pencapaian :</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" placeholder="Deskripsi..." id="floatingTextarea" name="deskripsi_pencapaian" required><?= $data[0]->deskripsi_pencapaian ?></textarea>
+									<textarea id="desc_kerja_sama" name="deskripsi_pencapaian" required><?= $data[0]->deskripsi_pencapaian ?></textarea>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -106,6 +106,24 @@
 		//replace the "Choose a file" label
 		var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
 		$(this).next('.custom-file-label').html(cleanFileName);
+	});
+
+	$('#desc_kerja_sama').summernote({
+		placeholder: 'Tulis deskripsi disini....',
+		disableDragAndDrop: true,
+		height: 240,
+		minHeight: 80,
+		maxHeight: 360,
+		toolbar: [
+			// [groupName, [list of button]]
+			['style', ['bold', 'italic', 'underline']],
+			['font', ['superscript', 'subscript']],
+			['fontsize', ['fontsize']],
+			['color', ['color']],
+			['para', ['ul', 'ol', 'paragraph']],
+			['view', ['fullscreen', 'help']],
+			['misc', ['codeview']]
+		]
 	});
 </script>
 </body>

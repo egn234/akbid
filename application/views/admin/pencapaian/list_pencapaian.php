@@ -51,12 +51,24 @@
 							$start = 0;
 							foreach ($allData as $data) {
 								$no = 1 + $start;
+								$countDesc = count(explode(" ", $data->deskripsi_pencapaian));
 							?>
 
 								<tr>
 									<td><?= $no ?></td>
 									<td><?= $data->judul_pencapaian ?></td>
-									<td><?= $data->deskripsi_pencapaian ?></td>
+									<td>
+										<?php
+										if ($countDesc > 50) {
+											$slice = array_slice(explode(" ", $data->deskripsi_pencapaian), 0, 51);
+										?>
+											<?= implode(" ", $slice); ?>......
+										<?php
+										} else {
+											echo $data->deskripsi_pencapaian;
+										}
+										?>
+									</td>
 									<td>
 										<center>
 											<img src="<?= base_url(); ?>upload/pencapaian/<?= $data->foto ?>" class="rounded" style="max-height: 128px; max-width: 128px;">
