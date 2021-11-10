@@ -14,6 +14,7 @@ class page extends CI_Controller {
 		$this->load->model('M_layanan');
 		$this->load->model('M_dosen');
 		$this->load->model('M_staff');
+		$this->load->model('M_galerik');
 		
 	}
 	
@@ -242,6 +243,34 @@ class page extends CI_Controller {
 					<td>Nomor Telepon</td>
 					<td>:</td>
 					<td>' . $data->nomor_telp . '</td>
+				</tr>
+				</table>';
+			}
+		}
+	}
+
+	//Galeri Kegiatan 
+	public function galeri_kegiatan()
+	{
+		$data = $this->M_galerik->getAllGaleriK();
+		$this->session->set_userdata('all_data', $data);
+		$this->load->view('homepage/galeri_kegiatan');
+	}
+	//Galeri Detail
+	public function galerik_detail()
+	{
+		if ($this->input->post('rowid')) {
+			$id = $this->input->post('rowid');
+			$dataGaleriK = $this->M_galerik->getGaleriKById($id);
+			foreach ($dataGaleriK as $data) {
+				echo '<table class="table">
+				<tr>
+					<td></td>
+					<td class="text-center text-uppercase"><b>' . $data->judul . '</b></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="3"><img src="' . base_url() . 'upload/galeri_kegiatan/' . $data->foto . '" class="rounded mx-auto d-block" style="max-height: 320px; max-width: 320px;"></td>
 				</tr>
 				</table>';
 			}

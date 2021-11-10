@@ -23,6 +23,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('page/layanan'); ?>">Layanan</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('page/galeri_kegiatan'); ?>">Galeri</a>
+				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Pegawai
