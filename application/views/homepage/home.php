@@ -12,22 +12,37 @@
 	<div class="back-to-top"></div>
 	<header>
 		<?php $this->load->view('homepage/navbar', $data); ?>
+
 		<div class="container">
-			<div class="page-banner home-banner">
-				<div class="row align-items-center flex-wrap-reverse h-100">
-					<div class="col-md-6 py-5 wow fadeInLeft">
-						<h1 class="mb-4">Let's Check and Optimize your website!</h1>
-						<p class="text-lg text-grey mb-5">Ignite the most powerfull growth engine you have ever built for your company</p>
-						<a href="#" class="btn btn-primary btn-split">Watch Video <div class="fab"><span class="mai-play"></span></div></a>
-					</div>
-					<div class="col-md-6 py-5 wow zoomIn">
-						<div class="img-fluid text-center">
-							<img src="<?= base_url() ?>assets/seogram/assets/img/banner_image_1.svg" alt="">
+			<center>
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="<?= base_url() ?>upload/layanan_default.jpg" class=" d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="First slide">
+						</div>
+						<div class="carousel-item">
+							<img src="<?= base_url() ?>upload/publikasi_default.jpg" class="d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="Second slide">
+						</div>
+						<div class="carousel-item">
+							<img src="<?= base_url() ?>upload/layanan_default.jpg" class="d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="Third slide">
 						</div>
 					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
 				</div>
-				<a href="#about" class="btn-scroll" data-role="smoothscroll"><span class="mai-arrow-down"></span></a>
-			</div>
+			</center>
+			<!-- <a href="#about" class="btn-scroll" data-role="smoothscroll"><span class="mai-arrow-down"></span></a> -->
 		</div>
 	</header>
 
@@ -95,93 +110,47 @@
 		</div> <!-- .container -->
 	</div> <!-- .page-section -->
 
+	<!-- layanan -->
 	<div class="page-section bg-light">
 		<div class="container">
 			<div class="text-center wow fadeInUp">
-				<div class="subhead">Our services</div>
-				<h2 class="title-section">How SEO Team Can Help</h2>
+				<div class="subhead">Layanan Kami</div>
+				<h2 class="title-section">Bagaimana Kami Melayani</h2>
 				<div class="divider mx-auto"></div>
 			</div>
 
 			<div class="row">
-				<div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
-					<div class="features">
-						<div class="header mb-3">
-							<span class="mai-business"></span>
+				<?php foreach ($data_layanan as $data) { ?>
+					<div class="col-lg-4 py-3 wow fadeInUp">
+						<div class="card-blog">
+							<div class="header">
+								<center>
+									<div class="post-thumb">
+										<img src="<?= base_url() ?>upload/layanan_default.jpg" alt="">
+									</div>
+								</center>
+							</div>
+							<div class="body">
+								<h5 class="post-title"><a href="<?= base_url(); ?>page/layanan_details/<?= $data->layanan_id ?>"><?= $data->judul_layanan ?></a></h5>
+								<?php
+								$val = strtotime($data->date_created);
+								$date = date("d-m-Y", $val);
+								?>
+								<div class="post-date">Posted on <a href="<?= base_url(); ?>page/layanan_details/<?= $data->layanan_id ?>"><?= $date ?></a></div>
+							</div>
 						</div>
-						<h5>OnSite SEO</h5>
-						<p>We analyse your website's structure, internal architecture & other key</p>
 					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
-					<div class="features">
-						<div class="header mb-3">
-							<span class="mai-business"></span>
-						</div>
-						<h5>OnSite SEO</h5>
-						<p>We analyse your website's structure, internal architecture & other key</p>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
-					<div class="features">
-						<div class="header mb-3">
-							<span class="mai-business"></span>
-						</div>
-						<h5>OnSite SEO</h5>
-						<p>We analyse your website's structure, internal architecture & other key</p>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
-					<div class="features">
-						<div class="header mb-3">
-							<span class="mai-business"></span>
-						</div>
-						<h5>OnSite SEO</h5>
-						<p>We analyse your website's structure, internal architecture & other key</p>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
-					<div class="features">
-						<div class="header mb-3">
-							<span class="mai-business"></span>
-						</div>
-						<h5>OnSite SEO</h5>
-						<p>We analyse your website's structure, internal architecture & other key</p>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
-					<div class="features">
-						<div class="header mb-3">
-							<span class="mai-business"></span>
-						</div>
-						<h5>OnSite SEO</h5>
-						<p>We analyse your website's structure, internal architecture & other key</p>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
-					<div class="features">
-						<div class="header mb-3">
-							<span class="mai-business"></span>
-						</div>
-						<h5>OnSite SEO</h5>
-						<p>We analyse your website's structure, internal architecture & other key</p>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
-					<div class="features">
-						<div class="header mb-3">
-							<span class="mai-business"></span>
-						</div>
-						<h5>OnSite SEO</h5>
-						<p>We analyse your website's structure, internal architecture & other key</p>
-					</div>
-				</div>
+				<?php } ?>
+
+			</div>
+			<div class="col-12 mt-4 text-center wow fadeInUp">
+				<a href="<?= base_url(); ?>page/layanan" class="btn btn-primary">Lihat Layanan</a>
 			</div>
 
 		</div> <!-- .container -->
 	</div> <!-- .page-section -->
 
-	<div class="page-section banner-seo-check">
+	<!-- <div class="page-section banner-seo-check">
 		<div class="wrap bg-image" style="background-image: url(<?= base_url() ?>assets/seogram/assets/img/bg_pattern.svg);">
 			<div class="container text-center">
 				<div class="row justify-content-center wow fadeInUp">
@@ -193,93 +162,49 @@
 						</form>
 					</div>
 				</div>
-			</div> <!-- .container -->
-		</div> <!-- .wrap -->
-	</div> <!-- .page-section -->
+			</div>  .container -->
+	<!-- </div> .wrap -->
+	<!-- </div> .page-section -->
 
+	<!-- Pencapaian -->
 	<div class="page-section">
 		<div class="container">
 			<div class="text-center wow fadeInUp">
-				<div class="subhead">Pricing Plan</div>
-				<h2 class="title-section">Choose plan the right for you</h2>
+				<div class="subhead">Pencapaian Kami</div>
+				<h2 class="title-section">Lihat Pencapaian Terbaru</h2>
 				<div class="divider mx-auto"></div>
 			</div>
 			<div class="row mt-5">
-				<div class="col-lg-4 py-3 wow zoomIn">
-					<div class="card-pricing">
-						<div class="header">
-							<div class="pricing-type">Basic</div>
-							<div class="price">
-								<span class="dollar">$</span>
-								<h1>39<span class="suffix">.99</span></h1>
+				<?php foreach ($data_pencapaian as $data) { ?>
+					<div class="col-lg-4 py-3 wow fadeInUp">
+						<div class="card-blog">
+							<div class="header">
+								<center>
+									<div class="post-thumb">
+										<img src="<?= base_url() ?>upload/pencapaian/<?= $data->foto ?>" alt="">
+									</div>
+								</center>
 							</div>
-							<h5>Per Month</h5>
-						</div>
-						<div class="body">
-							<p>25 Analytics <span class="suffix">Campaign</span></p>
-							<p>1,300 Change <span class="suffix">Keywords</span></p>
-							<p>Social Media <span class="suffix">Reviews</span></p>
-							<p>1 Free <span class="suffix">Optimization</span></p>
-							<p>24/7 <span class="suffix">Support</span></p>
-						</div>
-						<div class="footer">
-							<a href="#" class="btn btn-pricing btn-block">Subscribe</a>
+							<div class="body">
+								<h5 class="post-title"><a href="<?= base_url(); ?>page/pencapaian_details/<?= $data->pencapaian_id ?>"><?= $data->judul_pencapaian ?></a></h5>
+								<?php
+								$val = strtotime($data->date_created);
+								$date = date("d-m-Y", $val);
+								?>
+								<div class="post-date">Posted on <a href="<?= base_url(); ?>page/pencapaian_details/<?= $data->pencapaian_id ?>"><?= $date ?></a></div>
+							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-lg-4 py-3 wow zoomIn">
-					<div class="card-pricing marked">
-						<div class="header">
-							<div class="pricing-type">Standar</div>
-							<div class="price">
-								<span class="dollar">$</span>
-								<h1>59<span class="suffix">.99</span></h1>
-							</div>
-							<h5>Per Month</h5>
-						</div>
-						<div class="body">
-							<p>25 Analytics <span class="suffix">Campaign</span></p>
-							<p>1,300 Change <span class="suffix">Keywords</span></p>
-							<p>Social Media <span class="suffix">Reviews</span></p>
-							<p>1 Free <span class="suffix">Optimization</span></p>
-							<p>24/7 <span class="suffix">Support</span></p>
-						</div>
-						<div class="footer">
-							<a href="#" class="btn btn-pricing btn-block">Subscribe</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 py-3 wow zoomIn">
-					<div class="card-pricing">
-						<div class="header">
-							<div class="pricing-type">Professional</div>
-							<div class="price">
-								<span class="dollar">$</span>
-								<h1>99<span class="suffix">.99</span></h1>
-							</div>
-							<h5>Per Month</h5>
-						</div>
-						<div class="body">
-							<p>25 Analytics <span class="suffix">Campaign</span></p>
-							<p>1,300 Change <span class="suffix">Keywords</span></p>
-							<p>Social Media <span class="suffix">Reviews</span></p>
-							<p>1 Free <span class="suffix">Optimization</span></p>
-							<p>24/7 <span class="suffix">Support</span></p>
-						</div>
-						<div class="footer">
-							<a href="#" class="btn btn-pricing btn-block">Subscribe</a>
-						</div>
-					</div>
-				</div>
-
+				<?php } ?>
+			</div>
+			<div class="col-12 mt-4 text-center wow fadeInUp">
+				<a href="<?= base_url(); ?>page/pencapaian" class="btn btn-primary">Lihat Pencapaian</a>
 			</div>
 		</div> <!-- .container -->
 	</div> <!-- .page-section -->
 
 	<!-- Banner info -->
-	<div class="page-section banner-info">
+	<!-- <div class="page-section banner-info">
 		<div class="wrap bg-image" style="background-image: url(<?= base_url() ?>assets/seogram/assets/img/bg_pattern.svg);">
 			<div class="container">
 				<div class="row align-items-center">
@@ -307,63 +232,43 @@
 				</div>
 			</div>
 		</div> <!-- .wrap -->
-	</div> <!-- .page-section -->
+	<!-- </div> .page-section -->
 
-	<!-- Blog -->
-	<div class="page-section">
+	<!-- Posts -->
+	<div class="page-section bg-light">
 		<div class="container">
 			<div class="text-center wow fadeInUp">
-				<div class="subhead">Our Blog</div>
-				<h2 class="title-section">Read Latest News</h2>
+				<div class="subhead">Postingan Kami</div>
+				<h2 class="title-section">Baca Berita Terbaru</h2>
 				<div class="divider mx-auto"></div>
 			</div>
-
 			<div class="row mt-5">
-				<div class="col-lg-4 py-3 wow fadeInUp">
-					<div class="card-blog">
-						<div class="header">
-							<div class="post-thumb">
-								<img src="<?= base_url() ?>assets/seogram/assets/img/blog/blog-1.jpg" alt="">
+				<?php foreach ($data_posts as $data) { ?>
+
+					<div class="col-lg-4 py-3 wow fadeInUp">
+						<div class="card-blog">
+							<div class="header">
+								<center>
+									<div class="post-thumb">
+										<img src="<?= base_url() ?>upload/posts/<?= $data->foto ?>" alt="">
+									</div>
+								</center>
+							</div>
+							<div class="body">
+								<h5 class="post-title"><a href="<?= base_url(); ?>page/posts_details/<?= $data->posting_id ?>"><?= $data->judul_posting ?></a></h5>
+								<?php
+								$val = strtotime($data->date_created);
+								$date = date("d-m-Y", $val);
+								?>
+								<div class="post-date">Posted on <a href="<?= base_url(); ?>page/posts_details/<?= $data->posting_id ?>"><?= $date ?></a></div>
 							</div>
 						</div>
-						<div class="body">
-							<h5 class="post-title"><a href="#">Source of Content Inspiration</a></h5>
-							<div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
-						</div>
 					</div>
-				</div>
+				<?php } ?>
+			</div>
 
-				<div class="col-lg-4 py-3 wow fadeInUp">
-					<div class="card-blog">
-						<div class="header">
-							<div class="post-thumb">
-								<img src="<?= base_url() ?>assets/seogram/assets/img/blog/blog-2.jpg" alt="">
-							</div>
-						</div>
-						<div class="body">
-							<h5 class="post-title"><a href="#">Source of Content Inspiration</a></h5>
-							<div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 py-3 wow fadeInUp">
-					<div class="card-blog">
-						<div class="header">
-							<div class="post-thumb">
-								<img src="<?= base_url() ?>assets/seogram/assets/img/blog/blog-3.jpg" alt="">
-							</div>
-						</div>
-						<div class="body">
-							<h5 class="post-title"><a href="#">Source of Content Inspiration</a></h5>
-							<div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12 mt-4 text-center wow fadeInUp">
-					<a href="blog.html" class="btn btn-primary">View More</a>
-				</div>
+			<div class="col-12 mt-4 text-center wow fadeInUp">
+				<a href="<?= base_url(); ?>page/posts" class="btn btn-primary">Lihat Posts</a>
 			</div>
 		</div>
 	</div>

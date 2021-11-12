@@ -19,7 +19,10 @@ class page extends CI_Controller {
 	}
 	
 	public function index(){
-		$this->load->view('homepage/home');
+		$query['data_pencapaian'] = $this->M_pencapaian->getPencapaianWithLimit(0, 3);
+		$query['data_layanan'] = $this->M_layanan->getLayananWithLimit(0, 3);
+		$query['data_posts'] = $this->M_posting->getPostsWithLimit(0,3);
+		$this->load->view('homepage/home', $query);
 	}
 
 	public function Visimisi()
