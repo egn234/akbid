@@ -15,28 +15,28 @@
 
 		<div class="container">
 			<center>
-				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<div id="g_utama" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						<li data-target="#g_utama" data-slide-to="0" class="active"></li>
+						<?php for($i = 1; $i < count($galeri_utama); $i++){?>
+							<li data-target="#g_utama" data-slide-to="<?=$i?>"></li>
+						<?php }?>
 					</ol>
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="<?= base_url() ?>upload/layanan_default.jpg" class=" d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="First slide">
+							<img src="<?= base_url() ?>upload/galeri_utama/<?=$galeri_utama[0]->foto?>" class=" d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="<?=$galeri_utama[0]->judul?>">
 						</div>
-						<div class="carousel-item">
-							<img src="<?= base_url() ?>upload/publikasi_default.jpg" class="d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="Second slide">
-						</div>
-						<div class="carousel-item">
-							<img src="<?= base_url() ?>upload/layanan_default.jpg" class="d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="Third slide">
-						</div>
+						<?php for($j = 1; $j < count($galeri_utama); $j++){?>
+							<div class="carousel-item">
+								<img src="<?= base_url() ?>upload/galeri_utama/<?=$galeri_utama[$j]->foto?>" class=" d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="<?=$galeri_utama[$j]->judul?>">
+							</div>
+						<?php }?>
 					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<a class="carousel-control-prev" href="#g_utama" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span class="sr-only">Previous</span>
 					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<a class="carousel-control-next" href="#g_utama" role="button" data-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						<span class="sr-only">Next</span>
 					</a>
@@ -150,22 +150,6 @@
 		</div> <!-- .container -->
 	</div> <!-- .page-section -->
 
-	<!-- <div class="page-section banner-seo-check">
-		<div class="wrap bg-image" style="background-image: url(<?= base_url() ?>assets/seogram/assets/img/bg_pattern.svg);">
-			<div class="container text-center">
-				<div class="row justify-content-center wow fadeInUp">
-					<div class="col-lg-8">
-						<h2 class="mb-4">Check your Website SEO</h2>
-						<form action="#">
-							<input type="text" class="form-control" placeholder="E.g google.com">
-							<button type="submit" class="btn btn-success">Check Now</button>
-						</form>
-					</div>
-				</div>
-			</div>  .container -->
-	<!-- </div> .wrap -->
-	<!-- </div> .page-section -->
-
 	<!-- Pencapaian -->
 	<div class="page-section">
 		<div class="container">
@@ -202,37 +186,6 @@
 			</div>
 		</div> <!-- .container -->
 	</div> <!-- .page-section -->
-
-	<!-- Banner info -->
-	<!-- <div class="page-section banner-info">
-		<div class="wrap bg-image" style="background-image: url(<?= base_url() ?>assets/seogram/assets/img/bg_pattern.svg);">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-6 py-3 pr-lg-5 wow fadeInUp">
-						<h2 class="title-section">SEO to Improve Brand <br> Visibility</h2>
-						<div class="divider"></div>
-						<p>We're an experienced and talented team of passionate consultants who breathe with search engine marketing.</p>
-
-						<ul class="theme-list theme-list-light text-white">
-							<li>
-								<div class="h5">SEO Content Strategy</div>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-							</li>
-							<li>
-								<div class="h5">B2B SEO</div>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-6 py-3 wow fadeInRight">
-						<div class="img-fluid text-center">
-							<img src="<?= base_url() ?>assets/seogram/assets/img/banner_image_2.svg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> <!-- .wrap -->
-	<!-- </div> .page-section -->
 
 	<!-- Posts -->
 	<div class="page-section bg-light">
@@ -272,7 +225,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<?php $this->load->view('homepage/footer'); ?>
 	<?php $this->load->view('homepage/footer_assets'); ?>
