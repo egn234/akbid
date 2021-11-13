@@ -103,7 +103,9 @@
 
 	<?php $this->load->view('homepage/footer'); ?>
 	<?php $this->load->view('homepage/footer_assets'); ?>
-
+	<script type="text/javascript">
+		document.getElementById("posts").setAttribute("class", "nav-link active");
+	</script>
 </body>
 
 </html>

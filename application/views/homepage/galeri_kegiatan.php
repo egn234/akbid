@@ -71,6 +71,9 @@
 	<?php $this->load->view('homepage/footer'); ?>
 	<?php $this->load->view('homepage/footer_assets'); ?>
 	<?php $this->load->view('homepage/js/galerik_detail'); ?>
+	<script type="text/javascript">
+		document.getElementById("galeri").setAttribute("class", "nav-link active");
+	</script>
 </body>
 
 </html>

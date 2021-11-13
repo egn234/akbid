@@ -54,6 +54,9 @@
 
 	<?php $this->load->view('homepage/footer'); ?>
 	<?php $this->load->view('homepage/footer_assets'); ?>
+	<script type="text/javascript">
+		document.getElementById("kerja_sama").setAttribute("class", "nav-link active");
+	</script>
 </body>
 
 </html>

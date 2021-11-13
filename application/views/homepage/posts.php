@@ -65,8 +65,8 @@
 							<div class="body">
 								<h5 class="post-title"><a href="<?= base_url(); ?>page/posts_details/<?= $data->posting_id ?>"><?= $data->judul_posting ?></a></h5>
 								<?php
-									$val = strtotime($data->date_created);
-									$date = date("d-m-Y", $val);
+								$val = strtotime($data->date_created);
+								$date = date("d-m-Y", $val);
 								?>
 								<div class="post-date">Posted on <a href="<?= base_url(); ?>page/posts_details/<?= $data->posting_id ?>"><?= $date ?></a></div>
 							</div>
@@ -78,19 +78,23 @@
 			<nav aria-label="Page Navigation">
 				<ul class="pagination justify-content-center">
 					<li class="page-item">
-						<a class="page-link" <?php if($halaman > 1){ echo "href='?halaman=$previous'"; } ?> tabindex="-1" aria-disabled="true">Previous</a>
+						<a class="page-link" <?php if ($halaman > 1) {
+													echo "href='?halaman=$previous'";
+												} ?> tabindex="-1" aria-disabled="true">Previous</a>
 					</li>
-					<?php 
+					<?php
 					$jumlah = 1;
-					if ($total_halaman%10 == 0) {
-					$jumlah = $jumlah + $total_halaman;	
+					if ($total_halaman % 10 == 0) {
+						$jumlah = $jumlah + $total_halaman;
 					}
-					for ($x = $jumlah; $x <= $total_halaman; $x++) { 		
+					for ($x = $jumlah; $x <= $total_halaman; $x++) {
 					?>
-					<li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?= $x; ?></a></li>
-					<?php }?>
+						<li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?= $x; ?></a></li>
+					<?php } ?>
 					<li class="page-item">
-						<a class="page-link" <?php if($halaman < $total_halaman) { echo "href='?halaman=$next'"; } ?>>Next</a>
+						<a class="page-link" <?php if ($halaman < $total_halaman) {
+													echo "href='?halaman=$next'";
+												} ?>>Next</a>
 					</li>
 				</ul>
 			</nav>
@@ -100,6 +104,9 @@
 
 	<?php $this->load->view('homepage/footer'); ?>
 	<?php $this->load->view('homepage/footer_assets'); ?>
+	<script type="text/javascript">
+		document.getElementById("posts").setAttribute("class", "nav-link active");
+	</script>
 </body>
 
 </html>

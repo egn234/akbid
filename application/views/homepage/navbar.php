@@ -8,44 +8,44 @@
 
 		<div class="navbar-collapse collapse" id="navbarContent">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="<?= base_url(); ?>">Home</a>
+				<li class="nav-item">
+					<a id="home" class="nav-link" href="<?= base_url(); ?>">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('page/Visimisi'); ?>">Visi-Misi</a>
+					<a id="visi_misi" class="nav-link" href="<?= base_url('page/Visimisi'); ?>">Visi-Misi</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('page/kerjasama'); ?>">Kerjasama</a>
+					<a id="kerja_sama" class="nav-link" href="<?= base_url('page/kerjasama'); ?>">Kerjasama</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('page/posts'); ?>">Posts</a>
+					<a id="posts" class="nav-link" href="<?= base_url('page/posts'); ?>">Posts</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('page/layanan'); ?>">Layanan</a>
+					<a id="layanan" class="nav-link" href="<?= base_url('page/layanan'); ?>">Layanan</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('page/galeri_kegiatan'); ?>">Galeri</a>
+					<a id="galeri" class="nav-link" href="<?= base_url('page/galeri_kegiatan'); ?>">Galeri</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a id="pegawai" class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Pegawai
 					</a>
 					<div class="dropdown-menu" aria-labelledby="services">
-						<a class="dropdown-item" href="<?= base_url('page/dosen'); ?>">Dosen</a>
-						<a class="dropdown-item" href="<?= base_url('page/staff'); ?>">Staff</a>
+						<a id="dosen" class="dropdown-item" href="<?= base_url('page/dosen'); ?>">Dosen</a>
+						<a id="staff" class="dropdown-item" href="<?= base_url('page/staff'); ?>">Staff</a>
 					</div>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a id="prestasi" class="nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Prestasi
 					</a>
 					<div class="dropdown-menu" aria-labelledby="services">
-						<a class="dropdown-item" href="<?= base_url('page/publikasi'); ?>">Publikasi</a>
-						<a class="dropdown-item" href="<?= base_url('page/pencapaian'); ?>">Pencapaian</a>
+						<a id="publikasi" class="dropdown-item" href="<?= base_url('page/publikasi'); ?>">Publikasi</a>
+						<a id="pencapaian" class="dropdown-item" href="<?= base_url('page/pencapaian'); ?>">Pencapaian</a>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('page/contact'); ?>">Contact</a>
+					<a id="contact" class="nav-link" href="<?= base_url('page/contact'); ?>">Contact</a>
 				</li>
 				<!-- <li class="nav-item">
 					<a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>

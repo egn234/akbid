@@ -104,6 +104,10 @@
 
 	<?php $this->load->view('homepage/footer'); ?>
 	<?php $this->load->view('homepage/footer_assets'); ?>
+	<script type="text/javascript">
+		document.getElementById("prestasi").setAttribute("class", "nav-link dropdown-toggle active");
+		document.getElementById("publikasi").setAttribute("class", "dropdown-item active");
+	</script>
 </body>
 
 </html>

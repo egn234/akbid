@@ -35,12 +35,12 @@
 					<h2 class="title-section">Visi Dan Misi</h2>
 					<div class="divider"></div>
 					<?php
-						$allData = $this->session->all_data;
-						foreach ($allData as $data) {
-							if ($data->status == "aktif") {
-								echo $data->deskripsi_visi_misi;
-							}
+					$allData = $this->session->all_data;
+					foreach ($allData as $data) {
+						if ($data->status == "aktif") {
+							echo $data->deskripsi_visi_misi;
 						}
+					}
 					?>
 				</div>
 				<!-- <div class="col-lg-6 py-3">
@@ -54,6 +54,9 @@
 
 	<?php $this->load->view('homepage/footer'); ?>
 	<?php $this->load->view('homepage/footer_assets'); ?>
+	<script type="text/javascript">
+		document.getElementById("visi_misi").setAttribute("class", "nav-link active");
+	</script>
 </body>
 
 </html>
