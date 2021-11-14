@@ -46,11 +46,24 @@
                   </thead>
                   <tbody>
                     <?php $i = 1;?>
-                    <?php foreach($listPub as $a){ ?>
+                    <?php foreach($listPub as $a){ 
+                      $countDesc = count(explode(" ", $a->deskripsi_publikasi));
+                    ?>
                     <tr>
                       <td><?=$i?></td>
                       <td><?=$a->judul_publikasi?></td>
-                      <td><?=$a->deskripsi_publikasi?></td>
+                      <td><?=$a->deskripsi_publikasi?>
+                        <?php
+                        if ($countDesc > 51) {
+                          $slice = array_slice(explode(" ", $a->deskripsi_publikasi), 0, 51);
+                        ?>
+                          <?= implode(" ", $slice); ?>......
+                        <?php
+                        } else {
+                          echo $a->deskripsi_publikasi;
+                        }
+                        ?>
+                      </td>
                       <td><a href="<?=base_url()?>upload/publikasi/<?=$a->file_upload?>" target="_blank"><?=$a->file_upload?></td>
                       <td><?=$a->date_created?></td>
                       <td align="center">

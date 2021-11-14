@@ -79,15 +79,13 @@
   						</div>
   					</div>
   				</div>
-
+    			<div class="card-footer">
+    				<a href="<?= base_url(); ?>admin/dosen/update_dosen?id=<?= $data[0]->dosen_id ?>" class="float-right btn btn-info">Ubah Data</a>
+    				<a href="<?= base_url(); ?>admin/dosen" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
+    			</div>
   			</div>
   			<!-- /.card-body -->
   			<!-- card-footer -->
-  			<div class="card-footer">
-  				<a href="<?= base_url(); ?>admin/dosen/update_dosen?id=<?= $data[0]->dosen_id ?>" class="float-right btn btn-info">Ubah Data</a>
-  				<a href="<?= base_url(); ?>admin/dosen" class="btn btn-danger " onclick="return confirm('Ingin Kembali?')">Back</a>
-
-  			</div>
   		</div>
 
   		<!-- /.row -->

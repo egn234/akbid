@@ -35,7 +35,7 @@
 							</a>
 						</div>
 					</div>
-					<table id="example" class="table table-striped table-bordered" style="width:100%">
+					<table id="example" class="table table-sm table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
 								<th>No</th>
@@ -69,8 +69,10 @@
 										?>
 									</td>
 									<td>
-										<a href="<?= base_url(); ?>admin/layanan/detail_layanan?id=<?= $data->layanan_id ?>" class="btn btn-info">Detail</a>
-										<a href="<?= base_url(); ?>admin/layanan/delete_layanan?id=<?= $data->layanan_id ?>&file=<?= $data->file ?>" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+										<div class="btn-group btn-block">
+											<a href="<?= base_url(); ?>admin/layanan/detail_layanan?id=<?= $data->layanan_id ?>" class="btn btn-xs btn-info">Detail</a>
+											<a href="<?= base_url(); ?>admin/layanan/delete_layanan?id=<?= $data->layanan_id ?>&file=<?= $data->file ?>" class="btn btn-xs btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+										</div>
 									</td>
 								</tr>
 

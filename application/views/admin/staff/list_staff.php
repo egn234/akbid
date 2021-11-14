@@ -35,7 +35,7 @@
 							</a>
 						</div>
 					</div>
-					<table id="example" class="table table-striped table-bordered" style="width:100%">
+					<table id="example" class="table table-sm table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
 								<th>No</th>
@@ -43,8 +43,6 @@
 								<th>Pendidikan</th>
 								<th>Nip</th>
 								<th>Jabatan</th>
-								<th>Email</th>
-								<th>Foto</th>
 								<th>Status</th>
 								<th>Aksi</th>
 							</tr>
@@ -64,21 +62,17 @@
 										<td><?= $data->pendidikan_terakhir ?></td>
 										<td><?= $data->nip_staff ?></td>
 										<td><?= $data->jabatan ?></td>
-										<td><?= $data->email ?></td>
-										<td>
-											<center>
-												<img src="<?= base_url(); ?>upload/staff/<?= $data->foto ?>" class="rounded" style="max-height: 128px; max-width: 128px;">
-											</center>
-										</td>
 										<td>
 											<center>
 												<?php if ($data->status == "aktif") { ?>
-													<button class="btn btn-info" disabled>Aktif</button>
-												<?php } ?>
+													<button class="btn btn-xs btn-success" disabled>Aktif</button>
+												<?php }else{ ?>
+													<button class="btn btn-xs btn-success" disabled>Nonaktif</button>
+												<?php }?>
 											</center>
 										</td>
 										<td>
-											<a href="<?= base_url(); ?>admin/staff/detail_staff?id=<?= $data->staff_id ?>" class="btn btn-info">Detail</a>
+											<a href="<?= base_url(); ?>admin/staff/detail_staff?id=<?= $data->staff_id ?>" class="btn btn-xs btn-block btn-info">Detail</a>
 											<!-- <a href="#" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a> -->
 										</td>
 									</tr>

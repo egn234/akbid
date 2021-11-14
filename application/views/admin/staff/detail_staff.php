@@ -32,8 +32,8 @@
   						<div class="col-lg-8 border-left border-right">
   							<table class="table">
   								<tr>
-  									<td width="20%">Nama Staff</td>
-  									<td width="5%">:</td>
+  									<td width="25%">Nama Staff</td>
+  									<td width="1%">:</td>
   									<td><?= $data[0]->nama ?></td>
   								</tr>
   								<tr>

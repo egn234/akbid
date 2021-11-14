@@ -35,13 +35,13 @@
 							</a>
 						</div>
 					</div>
-					<table id="example" class="table table-striped table-bordered" style="width:100%">
+					<table id="example" class="table table-sm table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
 								<th>No</th>
 								<th style="max-width: 280px;">Deskripsi Visi - Misi</th>
 								<th>Status</th>
-								<th>Aksi</th>
+								<th width="12%">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -70,18 +70,24 @@
 									<td>
 										<center>
 											<?php if ($data->status == "aktif") { ?>
-												<button class="btn btn-info" disabled>Aktif</button>
+												<button class="btn btn-xs btn-success" disabled>Aktif</button>
 											<?php } else { ?>
-												<button class="btn btn-warning" disabled>Non-Aktif</button>
+												<button class="btn btn-xs btn-danger" disabled>Non-Aktif</button>
 											<?php } ?>
 										</center>
 									</td>
 									<td>
-										<?php if ($data->status == "non-aktif") { ?>
-											<a href="<?= base_url(); ?>admin/visi_misi/change_status/<?= $data->visi_misi_id ?>" class="btn btn-xs btn-success">Aktifkan</a>
-										<?php } ?>
-										<a href="<?= base_url(); ?>admin/visi_misi/detail_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-info">Detail</a>
-										<a href="<?= base_url(); ?>admin/visi_misi/delete_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+										<div class="row">
+											<div class="btn-group btn-block col-8">
+												<a href="<?= base_url(); ?>admin/visi_misi/detail_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-info">Detail</a>
+												<a href="<?= base_url(); ?>admin/visi_misi/delete_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-danger" onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+											</div>
+											<div class="col-4">
+												<?php if ($data->status == "non-aktif") { ?>
+													<a href="<?= base_url(); ?>admin/visi_misi/change_status/<?= $data->visi_misi_id ?>" class="btn btn-block btn-xs btn-success">Aktifkan</a>
+												<?php } ?>
+											</div>
+										</div>
 									</td>
 								</tr>
 

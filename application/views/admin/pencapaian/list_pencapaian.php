@@ -35,13 +35,12 @@
 							</a>
 						</div>
 					</div>
-					<table id="example" class="table table-striped table-bordered" style="width:100%">
+					<table id="example" class="table table-sm table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
 								<th>No</th>
 								<th>Judul Pencapaian</th>
 								<th>Deskripsi</th>
-								<th>Foto</th>
 								<th>Aksi</th>
 							</tr>
 						</thead>
@@ -70,13 +69,10 @@
 										?>
 									</td>
 									<td>
-										<center>
-											<img src="<?= base_url(); ?>upload/pencapaian/<?= $data->foto ?>" class="rounded" style="max-height: 128px; max-width: 128px;">
-										</center>
-									</td>
-									<td>
-										<a href="<?= base_url(); ?>admin/pencapaian/detail_pencapaian?id=<?= $data->pencapaian_id ?>" class="btn btn-info">Detail</a>
-										<a href="<?= base_url(); ?>admin/pencapaian/delete_pencapaian?id=<?= $data->pencapaian_id ?>&foto=<?= $data->foto ?>" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+										<div class="btn-group btn-block">
+											<a href="<?= base_url(); ?>admin/pencapaian/detail_pencapaian?id=<?= $data->pencapaian_id ?>" class="btn btn-xs btn-info">Detail</a>
+											<a href="<?= base_url(); ?>admin/pencapaian/delete_pencapaian?id=<?= $data->pencapaian_id ?>&foto=<?= $data->foto ?>" class="btn btn-xs btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+										</div>
 									</td>
 								</tr>
 

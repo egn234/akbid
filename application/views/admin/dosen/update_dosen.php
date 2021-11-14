@@ -85,7 +85,7 @@
 										</div>
 									</div>
 									<?php if (isset($data[0]->foto)) { ?>
-										<img src="<?= base_url(); ?>upload/dosen/<?= $data[0]->foto ?>" width='85' height='90'>
+										<img src="<?= base_url(); ?>upload/dosen/<?= $data[0]->foto ?>" height='90'>
 									<?php } ?>
 								</div>
 							</div>

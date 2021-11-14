@@ -35,7 +35,7 @@
 							</a>
 						</div>
 					</div>
-					<table id="example" class="table table-striped table-bordered" style="width:100%">
+					<table id="example" class="table table-sm table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
 								<th>No</th>
@@ -43,9 +43,7 @@
 								<th>Nidn</th>
 								<th>Nip</th>
 								<th>Prodi</th>
-								<th>Email</th>
 								<th>Jabatan</th>
-								<th>Foto</th>
 								<th>Status</th>
 								<th>Aksi</th>
 							</tr>
@@ -65,22 +63,18 @@
 										<td><?= $data->nidn_dosen ?></td>
 										<td><?= $data->nip_dosen ?></td>
 										<td><?= $data->prodi ?></td>
-										<td><?= $data->email ?></td>
 										<td><?= $data->jabatan_struktural ?></td>
 										<td>
 											<center>
-												<img src="<?= base_url(); ?>upload/dosen/<?= $data->foto ?>" class="rounded" style="max-height: 128px; max-width: 128px;">
-											</center>
-										</td>
-										<td>
-											<center>
 												<?php if ($data->status == "aktif") { ?>
-													<button class="btn btn-info" disabled>Aktif</button>
+													<button class="btn btn-success btn-xs" disabled>Aktif</button>
+												<?php }else{ ?>
+													<button class="btn btn-danger btn-xs" disabled>Nonaktif</button>
 												<?php } ?>
 											</center>
 										</td>
 										<td>
-											<a href="<?= base_url(); ?>admin/dosen/detail_dosen?id=<?= $data->dosen_id ?>" class="btn btn-info">Detail</a>
+											<a href="<?= base_url(); ?>admin/dosen/detail_dosen?id=<?= $data->dosen_id ?>" class="btn btn-xs btn-block btn-info">Detail</a>
 											<!-- <a href="#" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a> -->
 										</td>
 									</tr>

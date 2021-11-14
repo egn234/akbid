@@ -49,10 +49,10 @@
                     <tr>
                       <td><?=$i?></td>
                       <td><?=$a->judul_posting?></td>
+                      <td><?=$a->date_created?></td>
                       <td>
                       	<div class="btn btn-flat btn-secondary">N/A</div>
                       </td>
-                      <td><?=$a->date_created?></td>
                       <td align="center">
                         <a href="<?=base_url()?>admin/posting/edit/<?=$a->posting_id?>" class="btn btn-xs btn-info">
                           <i class="fas fa-book"></i> Edit

@@ -35,7 +35,7 @@
 							</a>
 						</div>
 					</div>
-					<table id="example" class="table table-striped table-bordered" style="width:100%">
+					<table id="example" class="table table-sm table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
 								<th>No.</th>
@@ -62,7 +62,7 @@
 									<td><?= $data->date_created ?></td>
 									<td>
 										<center>
-											<a href="<?= base_url(); ?>admin/main_gallery/delete_galeriut?id=<?= $data->galeri_utama_id ?>&foto=<?= $data->foto ?>" class="btn btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
+											<a href="<?= base_url(); ?>admin/main_gallery/delete_galeriut?id=<?= $data->galeri_utama_id ?>&foto=<?= $data->foto ?>" class="btn btn-xs btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
 										</center>
 									</td>
 								</tr>
