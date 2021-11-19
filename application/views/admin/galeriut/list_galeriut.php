@@ -42,6 +42,7 @@
 								<th>Judul</th>
 								<th>Foto</th>
 								<th>Tanggal</th>
+								<th>Status</th>
 								<th>Aksi</th>
 							</tr>
 						</thead>
@@ -60,6 +61,15 @@
 										<img src="<?= base_url() ?>upload/galeri_utama/<?= $data->foto ?>" height="200">
 									</td>
 									<td><?= $data->date_created ?></td>
+									<td>
+										<center>
+											<?php if ($data->status == "aktif") { ?>
+												<button class="btn btn-success btn-xs" disabled>Aktif</button>
+											<?php } else { ?>
+												<button class="btn btn-danger btn-xs" disabled>Nonaktif</button>
+											<?php } ?>
+										</center>
+									</td>
 									<td>
 										<center>
 											<a href="<?= base_url(); ?>admin/main_gallery/delete_galeriut?id=<?= $data->galeri_utama_id ?>&foto=<?= $data->foto ?>" class="btn btn-xs btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>

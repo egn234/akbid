@@ -58,6 +58,7 @@ class main_gallery extends MY_Controller {
 		);
 
 		$jud = $this->input->post('judul');
+		$status = $this->input->post('status');
 		define('MB', 1048576);
 		if ($_FILES['foto']['size'] > 5 * MB) { // JIKA FILE DI UPLOAD OLEH USER
 			$alert = '<div class="alert alert-danger alert-dismissible">
@@ -82,7 +83,7 @@ class main_gallery extends MY_Controller {
 			redirect('admin/main_gallery/create_galeriut');
 		}
 
-		$this->m_galeriut->insertGaleriut($jud, $foto);
+		$this->m_galeriut->insertGaleriut($jud, $foto, $status);
 		$alert = '<div class="alert alert-success alert-dismissible">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <center>Foto Berhasil Ditambahkan</center>

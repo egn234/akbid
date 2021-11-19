@@ -23,7 +23,7 @@ class page extends CI_Controller {
 		$query['data_pencapaian'] = $this->M_pencapaian->getPencapaianWithLimit(0, 3);
 		$query['data_layanan'] = $this->M_layanan->getLayananWithLimit(0, 3);
 		$query['data_posts'] = $this->M_posting->getPostsWithLimit(0,3);
-		$query['galeri_utama'] = $this->M_galeriut->getAllGaleriut();
+		$query['galeri_utama'] = $this->M_galeriut->getAllGaleriutWithStatus('aktif');
 		$this->load->view('homepage/home', $query);
 	}
 

@@ -48,6 +48,17 @@
   								</div>
   							</div>
   						</div>
+  						<div class="form-group">
+  							<div class="input-group input-group mb-3">
+  								<div class="input-group-prepend">
+  									<span class="input-group-text" id="basic-addon1">Status</span>
+  								</div>
+  								<select class="form-control" aria-label=".form-select-lg example" name="status">
+  									<option value="aktif" selected>Aktif</option>
+  									<option value="non-aktif">Non-Aktif</option>
+  								</select>
+  							</div>
+  						</div>
   					</form>
   				</div>
   				<div class="card-footer">

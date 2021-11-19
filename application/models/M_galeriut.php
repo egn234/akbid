@@ -13,11 +13,19 @@ class m_galeriut extends CI_Model {
 		return $this->db->query($sql)->result();
 	}
 
-	public function insertGaleriut($judul, $foto){
+	public function getAllGaleriutWithStatus($status)
+	{
+		$this->db->where('status', $status);
+		$query = $this->db->get('tb_galeri_utama');
+		return $query->result();
+	}
+
+	public function insertGaleriut($judul, $foto, $status){
 		$object = array(
 			'judul' => $judul,
 			'foto' => $foto,
 			'date_created' => date('Y-m-d H:i:s'),
+			'status' => $status,
 			'admin_id' => $this->session->userdata('admin_id_sess')
 		);
 
