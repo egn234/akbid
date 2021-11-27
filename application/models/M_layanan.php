@@ -10,9 +10,9 @@ class m_layanan extends CI_Model {
 		return $this->db->query($sql)->result();
 	}
 
-	public function getLayananById($staff_id)
+	public function getLayananById($layanan_id)
 	{
-		$sql = "SELECT * FROM tb_layanan WHERE layanan_id = $staff_id";
+		$sql = "SELECT * FROM tb_layanan WHERE layanan_id = $layanan_id";
 		return $this->db->query($sql)->result();
 	}
 

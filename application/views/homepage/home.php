@@ -51,16 +51,15 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6 py-3 wow fadeInUp">
 					<span class="subhead">About us</span>
-					<h2 class="title-section">The number #1 SEO Service Company</h2>
+					<h2 class="title-section"><?= $data_about[0]->judul_about ?></h2>
 					<div class="divider"></div>
 
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-					<p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
-					<a href="about.html" class="btn btn-primary mt-3">Read More</a>
+					<?= $data_about[0]->deskripsi_about ?>
+					<a href="<?= base_url() ?>page/detail_about" class="btn btn-primary mt-3">Read More</a>
 				</div>
 				<div class="col-lg-6 py-3 wow fadeInRight">
 					<div class="img-fluid py-3 text-center">
-						<img src="<?= base_url() ?>assets/seogram/assets/img/about_frame.png" alt="">
+						<img src="<?= base_url() ?>upload/akbid_logo.png" style="max-width: 360px;" alt="">
 					</div>
 				</div>
 			</div>

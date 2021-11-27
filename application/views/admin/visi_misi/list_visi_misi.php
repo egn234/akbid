@@ -57,8 +57,8 @@
 									<td><?= $no ?></td>
 									<td>
 										<?php
-										if ($countDesc > 50) {
-											$slice = array_slice(explode(" ", $data->deskripsi_visi_misi), 0, 51);
+										if ($countDesc > 40) {
+											$slice = array_slice(explode(" ", $data->deskripsi_visi_misi), 0, 41);
 										?>
 											<?= implode(" ", $slice); ?>......
 										<?php

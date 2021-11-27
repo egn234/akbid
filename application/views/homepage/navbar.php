@@ -12,6 +12,9 @@
 					<a id="home" class="nav-link" href="<?= base_url(); ?>">Home</a>
 				</li>
 				<li class="nav-item">
+					<a id="about" class="nav-link" href="<?= base_url('page/detail_about'); ?>">About</a>
+				</li>
+				<li class="nav-item">
 					<a id="visi_misi" class="nav-link" href="<?= base_url('page/Visimisi'); ?>">Visi-Misi</a>
 				</li>
 				<li class="nav-item">

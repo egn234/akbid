@@ -58,8 +58,8 @@
 									<td><?= $data->judul_layanan ?></td>
 									<td>
 										<?php
-										if ($countDesc > 50) {
-											$slice = array_slice(explode(" ", $data->deskripsi_layanan), 0, 51);
+										if ($countDesc > 40) {
+											$slice = array_slice(explode(" ", $data->deskripsi_layanan), 0, 41);
 										?>
 											<?= implode(" ", $slice); ?>......
 										<?php

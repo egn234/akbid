@@ -54,7 +54,7 @@
 							$start = 0;
 							foreach ($allData as $data) {
 								$no = 1 + $start;
-								if ($data->status == "aktif") {
+								
 							?>
 
 									<tr>
@@ -80,7 +80,7 @@
 									</tr>
 
 							<?php $start = 1 + $start;
-								}
+								
 							} ?>
 						</tbody>
 					</table>

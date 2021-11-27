@@ -16,6 +16,7 @@ class page extends CI_Controller {
 		$this->load->model('M_staff');
 		$this->load->model('M_galerik');
 		$this->load->model('M_galeriut');
+		$this->load->model('M_about');
 		
 	}
 	
@@ -23,6 +24,7 @@ class page extends CI_Controller {
 		$query['data_pencapaian'] = $this->M_pencapaian->getPencapaianWithLimit(0, 3);
 		$query['data_layanan'] = $this->M_layanan->getLayananWithLimit(0, 3);
 		$query['data_posts'] = $this->M_posting->getPostsWithLimit(0,3);
+		$query['data_about'] = $this->M_about->getAboutWithLimit(0, 1);
 		$query['galeri_utama'] = $this->M_galeriut->getAllGaleriutWithStatus('aktif');
 		$this->load->view('homepage/home', $query);
 	}
@@ -32,6 +34,14 @@ class page extends CI_Controller {
 		$data = $this->M_visi_misi->getAllVisimisi();
 		$this->session->set_userdata('all_data', $data);
 		$this->load->view('homepage/visimisi');
+	}
+
+	//About
+	public function detail_about()
+	{
+		$data = $this->M_about->getAllAbout();
+		$this->session->set_userdata('all_data', $data);
+		$this->load->view('homepage/about');
 	}
 
 	public function Kerjasama()
@@ -281,6 +291,8 @@ class page extends CI_Controller {
 			}
 		}
 	}
+
+	
 
 }
 

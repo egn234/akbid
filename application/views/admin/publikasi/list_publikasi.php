@@ -52,10 +52,10 @@
                     <tr>
                       <td><?=$i?></td>
                       <td><?=$a->judul_publikasi?></td>
-                      <td><?=$a->deskripsi_publikasi?>
+                      <td>
                         <?php
-                        if ($countDesc > 51) {
-                          $slice = array_slice(explode(" ", $a->deskripsi_publikasi), 0, 51);
+                        if ($countDesc > 31) {
+                          $slice = array_slice(explode(" ", $a->deskripsi_publikasi), 0, 31);
                         ?>
                           <?= implode(" ", $slice); ?>......
                         <?php
