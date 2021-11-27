@@ -72,14 +72,27 @@ class kerja_sama extends MY_Controller {
 		redirect('admin/kerja_sama/detail_kerja_sama?id=' . $kerja_sama_id);
 	}
 
-	public function change_status($kerja_sama_id)
+	public function change_status()
 	{
+		$kerja_sama_id = $_GET['id'];
 		$this->M_kerja_sama->turnOff($kerja_sama_id);
 		$this->M_kerja_sama->turnOn($kerja_sama_id);
 
 		$alert = '<div class="alert alert-success alert-dismissible">
       				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       				<center>Status Berhasil DiAktifkan</center>
+    			</div>';
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/kerja_sama');
+	}
+
+	public function nonaktifkan(){
+		$kerja_sama_id = $_GET['id'];
+		$this->M_kerja_sama->nonaktifkanKS($kerja_sama_id);
+
+		$alert = '<div class="alert alert-success alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Status Berhasil Dinonaktifkan</center>
     			</div>';
 		$this->session->set_flashdata('notif_action', $alert);
 		redirect('admin/kerja_sama');

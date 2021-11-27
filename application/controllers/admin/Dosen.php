@@ -45,7 +45,7 @@ class dosen extends MY_Controller {
 		$config['upload_path'] = './upload/dosen/';
 		$config['allowed_types'] = 'png|jpg|jpeg';
 		$config['file_name'] = $nama_dosen . "_pic";
-		$config['overwrite'] = false;
+		$config['overwrite'] = true;
 		$config['max_size'] = 5 * MB;
 
 		$this->load->library('upload', $config);

@@ -54,7 +54,7 @@
                       	<div class="btn btn-flat btn-secondary">N/A</div>
                       </td>
                       <td align="center">
-                        <a href="<?=base_url()?>admin/posting/edit/<?=$a->posting_id?>" class="btn btn-xs btn-info">
+                        <a href="<?=base_url()?>admin/posts/edit/<?=$a->posting_id?>" class="btn btn-xs btn-info">
                           <i class="fas fa-book"></i> Edit
                         </a>
                       </td>

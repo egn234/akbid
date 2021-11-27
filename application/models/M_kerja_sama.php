@@ -58,6 +58,11 @@ class m_kerja_sama extends CI_Model {
 		return $this->db->query($sql);
 	}
 
+	public function nonaktifkanKS($kerja_sama_id){
+		$sql = "UPDATE tb_kerja_sama SET status ='non-aktif' WHERE kerja_sama_id = $kerja_sama_id";
+		return $this->db->query($sql);
+	}
+
 	public function turnOffAll()
 	{
 		$sql = "UPDATE tb_kerja_sama SET status ='non-aktif'";

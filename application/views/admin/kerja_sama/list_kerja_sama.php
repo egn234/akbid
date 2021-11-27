@@ -41,7 +41,7 @@
 								<th>No</th>
 								<th style="max-width: 280px;">Deskripsi Kerjasama</th>
 								<th>Status</th>
-								<th>Aksi</th>
+								<th width="12%">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -76,9 +76,11 @@
 											<?php } ?>
 										</center>
 									</td>
-									<td>
+									<td align="right">
 										<?php if ($data->status == "non-aktif") { ?>
-											<a href="<?= base_url(); ?>admin/kerja_sama/change_status/<?= $data->kerja_sama_id ?>" class="btn btn-xs btn-success">Aktifkan</a>
+											<a href="<?= base_url(); ?>admin/kerja_sama/change_status?id=<?= $data->kerja_sama_id ?>" class="btn btn-xs btn-success"  onclick="return confirm('Ubah status menjadi aktif?')">Aktifkan</a>
+										<?php }else{ ?>
+											<a href="<?= base_url(); ?>admin/kerja_sama/change_status?id=<?= $data->kerja_sama_id ?>" class="btn btn-xs btn-warning"  onclick="return confirm('Ubah status menjadi nonaktif?')">Nonaktifkan</a>
 										<?php } ?>
 										<a href="<?= base_url(); ?>admin/kerja_sama/detail_kerja_sama?id=<?= $data->kerja_sama_id ?>" class="btn btn-xs btn-info">Detail</a>
 										<a href="<?= base_url(); ?>admin/kerja_sama/delete_kerja_sama?id=<?= $data->kerja_sama_id ?>" class="btn btn-xs btn-danger" onclick="return confirm('Ingin Menghapus?')">Hapus</a>

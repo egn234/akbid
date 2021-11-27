@@ -32,7 +32,7 @@
   				<!-- /.card-header -->
   				<div class="card-body">
             <?= $this->session->flashdata('notif_posting'); ?>
-            <form id="editPostingan" class="form" action="<?=base_url()?>admin/posts/edit_proc/<?=$editPos->postingan_id?>" method="POST" enctype="multipart/form-data">
+            <form id="editPostingan" class="form" action="<?=base_url()?>admin/posts/edit_proc/<?=$editPos->posting_id?>" method="POST" enctype="multipart/form-data">
               <div class="form-group">
                 <div class="input-group input-group mb-3">
                   <div class="input-group-prepend">

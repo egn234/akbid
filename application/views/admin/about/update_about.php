@@ -56,16 +56,6 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group row">
-								<label class="col-sm-2 col-form-label">Tanggal :</label>
-								<div class="col-sm-6">
-									<?php
-									$val = strtotime($data[0]->date_created);
-									$date = date("Y-m-d", $val);
-									?>
-									<input class="form-control" id="nofak" type="date" value="<?= $date ?>" name="date_created" required>
-								</div>
-							</div>
 
 						</div>
 				</div>

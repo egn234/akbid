@@ -67,13 +67,12 @@ class About extends MY_Controller {
 		//temporary 
 		$array_temp = array(
 			'judul_about' => $this->input->post('judul_about'),
-			'deskripsi_about' => $this->input->post('deskripsi_about'),
-			'date_created' => $this->input->post('date_created')
+			'deskripsi_about' => $this->input->post('deskripsi_about')
 		);
 
 		$judul_about = $this->input->post('judul_about');
 		$deskripsi_about = $this->input->post('deskripsi_about');
-		$date = $this->input->post('date_created');
+		$date = date('Y-m-d H:i:s');
 
 		$admin_id =	$this->session->userdata('admin_id_sess');
 
