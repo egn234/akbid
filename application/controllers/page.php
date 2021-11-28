@@ -37,11 +37,10 @@ class page extends CI_Controller {
 	}
 
 	//About
-	public function detail_about()
+	public function detail_about($id)
 	{
-		$data = $this->M_about->getAllAbout();
-		$this->session->set_userdata('all_data', $data);
-		$this->load->view('homepage/about');
+		$query['data'] = $this->M_about->getAboutById($id);
+		$this->load->view('homepage/about', $query);
 	}
 
 	public function Kerjasama()
@@ -285,7 +284,7 @@ class page extends CI_Controller {
 					<td></td>
 				</tr>
 				<tr>
-					<td colspan="3"><img src="' . base_url() . 'upload/galeri_kegiatan/' . $data->foto . '" class="rounded mx-auto d-block" style="max-height: 320px; max-width: 320px;"></td>
+					<td colspan="3"><img src="' . base_url() . 'upload/galeri_kegiatan/' . $data->foto . '" class="rounded mx-auto d-block" style="max-height: 90%; max-width: 90%;"></td>
 				</tr>
 				</table>';
 			}

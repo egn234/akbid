@@ -63,6 +63,11 @@
 		return $this->db->query($sql);
 	}
 
+	public function nonaktifkanVS($visi_misi_id){
+		$sql = "UPDATE tb_visi_misi SET status ='non-aktif' WHERE visi_misi_id = $visi_misi_id";
+		return $this->db->query($sql);
+	}
+
 	public function turnOffAll()
 	{
 		$sql = "UPDATE tb_visi_misi SET status ='non-aktif'";

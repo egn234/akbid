@@ -8,9 +8,9 @@
   				</div><!-- /.col -->
   				<div class="col-sm-6">
   					<ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/dashboard">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?=base_url()?>admin/layanan">Daftar Layanan</a></li>
-            <li class="breadcrumb-item active">Detail Layanan</li>
+  						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
+  						<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/layanan">Daftar Layanan</a></li>
+  						<li class="breadcrumb-item active">Detail Layanan</li>
   					</ol>
   				</div><!-- /.col -->
   			</div><!-- /.row -->
@@ -54,12 +54,16 @@
   							<hr>
   						</div>
   						<div class="col-lg-4">
-  							<center>
-  								<a href="<?= base_url() ?>upload/layanan/<?= $data[0]->file ?>" onclick="return confirm('Download File?')" download>
-  									<img src="<?= base_url() ?>upload/layanan/file.png" style="width: 70%; margin: 5%" class="align-middle">
-  								</a>
-  								<a href="<?= base_url() ?>upload/layanan/<?= $data[0]->file ?>" class="btn btn-info " onclick="return confirm('Download File?')" download>Download</a>
-  							</center>
+  							<?php if ($data[0]->file != "empty") { ?>
+  								<center>
+  									<a href="<?= base_url() ?>upload/layanan/<?= $data[0]->file ?>" onclick="return confirm('Download File?')" download>
+  										<img src="<?= base_url() ?>upload/layanan/file.png" style="margin: 5%; max-height: 180px; max-width: 180px;" class="align-middle">
+  									</a>
+  									<a href="<?= base_url() ?>upload/layanan/<?= $data[0]->file ?>" class="btn btn-info " onclick="return confirm('Download File?')" download>Download</a>
+  								</center>
+  							<?php } else { ?>
+  								<p style="width: 70%; margin: 35%">"no file attachment"</p>
+  							<?php } ?>
   						</div>
   					</div>
   				</div>

@@ -54,12 +54,16 @@
   							<hr>
   						</div>
   						<div class="col-lg-4">
-  							<center>
-  								<a href="<?= base_url() ?>upload/about/<?= $data[0]->file ?>" onclick="return confirm('Download File?')" download>
-  									<img src="<?= base_url() ?>upload/about/file.png" style="width: 70%; margin: 5%" class="align-middle">
-  								</a>
-  								<a href="<?= base_url() ?>upload/about/<?= $data[0]->file ?>" class="btn btn-info " onclick="return confirm('Download File?')" download>Download</a>
-  							</center>
+  							<?php if ($data[0]->file != "empty") { ?>
+  								<center>
+  									<a href="<?= base_url() ?>upload/about/<?= $data[0]->file ?>" onclick="return confirm('Download File?')" download>
+  										<img src="<?= base_url() ?>upload/about/file.png" style="margin: 5%; max-height: 180px; max-width: 180px;" class="align-middle">
+  									</a>
+  									<a href="<?= base_url() ?>upload/about/<?= $data[0]->file ?>" class="btn btn-info " onclick="return confirm('Download File?')" download>Download</a>
+  								</center>
+  							<?php } else { ?>
+  								<p style="width: 70%; margin: 35%">"no file attachment"</p>
+  							<?php } ?>
   						</div>
   					</div>
   				</div>

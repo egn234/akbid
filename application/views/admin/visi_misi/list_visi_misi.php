@@ -76,18 +76,14 @@
 											<?php } ?>
 										</center>
 									</td>
-									<td>
-										<div class="row">
-											<div class="btn-group btn-block col-8">
-												<a href="<?= base_url(); ?>admin/visi_misi/detail_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-info">Detail</a>
-												<a href="<?= base_url(); ?>admin/visi_misi/delete_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-danger" onclick="return confirm('Ingin Menghapus?')">Hapus</a>
-											</div>
-											<div class="col-4">
-												<?php if ($data->status == "non-aktif") { ?>
-													<a href="<?= base_url(); ?>admin/visi_misi/change_status/<?= $data->visi_misi_id ?>" class="btn btn-block btn-xs btn-success">Aktifkan</a>
-												<?php } ?>
-											</div>
-										</div>
+									<td align="right">
+										<?php if ($data->status == "non-aktif") { ?>
+											<a href="<?= base_url(); ?>admin/visi_misi/change_status?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-success" onclick="return confirm('Ubah status menjadi aktif?')">Aktifkan</a>
+										<?php }else{ ?>
+											<a href="<?= base_url(); ?>admin/visi_misi/nonaktifkan?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-warning" onclick="return confirm('Ubah status menjadi non-aktif?')">Nonaktifkan</a>
+										<?php } ?>
+										<a href="<?= base_url(); ?>admin/visi_misi/detail_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-info">Detail</a>
+										<a href="<?= base_url(); ?>admin/visi_misi/delete_visi_misi?id=<?= $data->visi_misi_id ?>" class="btn btn-xs btn-danger" onclick="return confirm('Ingin Menghapus?')">Hapus</a>
 									</td>
 								</tr>
 

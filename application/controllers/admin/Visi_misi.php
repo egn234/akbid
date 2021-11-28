@@ -70,17 +70,30 @@
 		redirect('admin/visi_misi/detail_visi_misi?id=' . $visi_misi_id);
 	}
 
-	public function change_status($visi_misi_id)
+	public function change_status()
 	{
+		$visi_misi_id = $_GET['id'];
 		$this->M_visi_misi->turnOff($visi_misi_id);
 		$this->M_visi_misi->turnOn($visi_misi_id);
 
 		$alert = '<div class="alert alert-success alert-dismissible">
       				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      				<center>Status Berhasil DiAktifkan</center>
+      				<center>Status Berhasil Diaktifkan</center>
     			</div>';
 		$this->session->set_flashdata('notif_action', $alert);
 		redirect('admin/visi_misi');
+	}
+
+	public function nonaktifkan(){
+		$visi_misi_id = $_GET['id'];
+		$this->M_visi_misi->nonaktifkanVS($visi_misi_id);
+
+		$alert = '<div class="alert alert-success alert-dismissible">
+      				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      				<center>Status Berhasil Dinonaktifkan</center>
+    			</div>';
+		$this->session->set_flashdata('notif_action', $alert);
+		redirect('admin/visi_misi');		
 	}
 
 	public function delete_visi_misi()

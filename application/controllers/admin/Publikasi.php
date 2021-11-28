@@ -71,6 +71,10 @@ class publikasi extends MY_Controller {
 	}
 
 	public function edit_proc($publikasi_id){
+		$jud = $this->input->post('judul_publikasi');
+		$desc = $this->input->post('deskripsi_publikasi');
+		$old_file = $this->m_publikasi->getPublikasiById($publikasi_id)[0]->file_upload;
+
 		define('MB', 1048576);
 		if ($_FILES['file_upload']['size'] > 4*MB) { // JIKA FILE DI UPLOAD OLEH USER
 			$alert = '<div class="alert alert-danger alert-dismissible">
@@ -82,13 +86,12 @@ class publikasi extends MY_Controller {
 
 			redirect('admin/publikasi/edit/'.$publikasi_id);
 		}elseif ($_FILES['file_upload']['size'] != 0) {
+			unlink("./upload/publikasi/".$old_file);
 			$file_upload = $this->_fileMod();
 		}else{
-			$file_upload = $this->m_publikasi->getPublikasiById($publikasi_id)[0]->file_upload;
+			$file_upload = $old_file;
 		}
 
-		$jud = $this->input->post('judul_publikasi');
-		$desc = $this->input->post('deskripsi_publikasi');
 
 		$this->m_publikasi->updatePublikasi($jud, $desc, $file_upload, $publikasi_id);
 		$alert = '<div class="alert alert-success alert-dismissible">

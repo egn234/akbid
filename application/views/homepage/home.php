@@ -54,7 +54,8 @@
 					<h2 class="title-section"><?php if(isset($data_about[0])){echo $data_about[0]->judul_about; }else{ echo "no one here but us, chikens!"; }  ?></h2>
 					<div class="divider"></div>
 					<?php if(isset($data_about[0])){echo $data_about[0]->deskripsi_about; ?>
-					<a href="<?= base_url() ?>page/detail_about" class="btn btn-primary mt-3">Read More</a>
+					<p>Kenali kami lebih dalam</p>
+					<a href="<?= base_url() ?>page/detail_about/<?= $data_about[0]->about_id ?>" class="btn btn-primary mt-3">Read More</a>
 					<?php }else{ echo "no one here but us, chikens!"; }  ?>
 				</div>
 				<div class="col-lg-6 py-3 wow fadeInRight">

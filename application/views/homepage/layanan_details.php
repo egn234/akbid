@@ -39,7 +39,9 @@
 
 						<div class="post-content">
 							<p><?= $data[0]->deskripsi_layanan ?></p>
+							<?php if ($data[0]->file != "empty") { ?>		
 							<a href="<?= base_url() ?>upload/layanan/<?= $data[0]->file ?>" target="_blank"><?= $data[0]->file ?>
+							<?php } ?>
 						</div>
 					</div>
 

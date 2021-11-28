@@ -51,7 +51,7 @@ class posts extends MY_Controller {
 		}elseif ($_FILES['foto']['size'] != 0) {
 			$foto = $this->_fileMod();
 		}else{
-			$foto = 'none';
+			$foto = 'image.jpg';
 		}
 
 		$this->m_posting->insertPosts($jud, $desc, $foto);
@@ -65,6 +65,10 @@ class posts extends MY_Controller {
 	}
 
 	public function edit_proc($posting_id){
+		$jud = $this->input->post('judul_posting');
+		$desc = $this->input->post('deskripsi_posting');
+		$old_foto = $this->m_posting->getPostsById($posting_id)[0]->foto;
+
 		define('MB', 1048576);
 		if ($_FILES['foto']['size'] > 4*MB) { // JIKA FILE DI UPLOAD OLEH USER
 			$alert = '<div class="alert alert-danger alert-dismissible">
@@ -76,13 +80,12 @@ class posts extends MY_Controller {
 
 			redirect('admin/posts/edit/'.$posting_id);
 		}elseif ($_FILES['foto']['size'] != 0) {
+			unlink("./upload/posts/".$old_foto);
 			$foto = $this->_fileMod();
 		}else{
-			$foto = $this->m_posting->getPostsById($posting_id)[0]->foto;
+			$foto = $old_foto;
 		}
 
-		$jud = $this->input->post('judul_posting');
-		$desc = $this->input->post('deskripsi_posting');
 
 		$this->m_posting->updatePosts($jud, $desc, $foto, $posting_id);
 		$alert = '<div class="alert alert-success alert-dismissible">

@@ -34,12 +34,7 @@
 				<div class="col-lg-12 py-3">
 					<h2 class="title-section">About</h2>
 					<div class="divider"></div>
-					<?php
-					$allData = $this->session->all_data;
-					foreach ($allData as $data) {
-						echo $data->deskripsi_about;
-					}
-					?>
+					<?= $data[0]->deskripsi_about; ?>
 				</div>
 				<!-- <div class="col-lg-6 py-3">
 					<div class="img-fluid py-3 text-center">
@@ -53,7 +48,7 @@
 	<?php $this->load->view('homepage/footer'); ?>
 	<?php $this->load->view('homepage/footer_assets'); ?>
 	<script type="text/javascript">
-		document.getElementById("about").setAttribute("class", "nav-link active");
+		// document.getElementById("about").setAttribute("class", "nav-link active");
 	</script>
 </body>
 

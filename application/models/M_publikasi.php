@@ -29,7 +29,7 @@ class m_publikasi extends CI_Model {
 		$sql = "UPDATE tb_publikasi SET
 			judul_publikasi = '$judul_publikasi',
 			deskripsi_publikasi = '$deskripsi_publikasi',
-			file_upload = '$file_upload',
+			file_upload = '$file_upload'
 			WHERE publikasi_id = $publikasi_id";
 
 		$this->db->query($sql);

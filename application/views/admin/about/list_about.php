@@ -41,7 +41,7 @@
 								<th>No</th>
 								<th>Judul About</th>
 								<th>Deskripsi</th>
-								<th>Aksi</th>
+								<th width="20%" align="center">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -68,8 +68,8 @@
 										}
 										?>
 									</td>
-									<td>
-										<div class="btn-group btn-block">
+									<td align="center">
+										<div class="btn-group">
 											<a href="<?= base_url(); ?>admin/about/detail_about?id=<?= $data->about_id ?>" class="btn btn-xs btn-info">Detail</a>
 											<a href="<?= base_url(); ?>admin/about/delete_about?id=<?= $data->about_id ?>&file=<?= $data->file ?>" class="btn btn-xs btn-danger " onclick="return confirm('Ingin Menghapus?')">Hapus</a>
 										</div>
