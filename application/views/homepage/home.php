@@ -16,21 +16,23 @@
 		<div class="container">
 			<center>
 				<div id="g_utama" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#g_utama" data-slide-to="0" class="active"></li>
-						<?php for ($i = 1; $i < count($galeri_utama); $i++) { ?>
-							<li data-target="#g_utama" data-slide-to="<?= $i ?>"></li>
-						<?php } ?>
-					</ol>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="<?= base_url() ?>upload/galeri_utama/<?= $galeri_utama[0]->foto ?>" class=" d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="<?= $galeri_utama[0]->judul ?>">
-						</div>
-						<?php for ($j = 1; $j < count($galeri_utama); $j++) { ?>
-							<div class="carousel-item">
-								<img src="<?= base_url() ?>upload/galeri_utama/<?= $galeri_utama[$j]->foto ?>" class=" d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="<?= $galeri_utama[$j]->judul ?>">
+					<?php if(isset($galeri_utama[0])){ ?>
+						<ol class="carousel-indicators">
+							<li data-target="#g_utama" data-slide-to="0" class="active"></li>
+							<?php for ($i = 1; $i < count($galeri_utama); $i++) { ?>
+								<li data-target="#g_utama" data-slide-to="<?= $i ?>"></li>
+							<?php } ?>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="<?= base_url() ?>upload/galeri_utama/<?= $galeri_utama[0]->foto ?>" class=" d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="<?= $galeri_utama[0]->judul ?>">
 							</div>
-						<?php } ?>
+							<?php for ($j = 1; $j < count($galeri_utama); $j++) { ?>
+								<div class="carousel-item">
+									<img src="<?= base_url() ?>upload/galeri_utama/<?= $galeri_utama[$j]->foto ?>" class=" d-block w-100" src="..." style="max-height: 620px; max-width: 980px;" alt="<?= $galeri_utama[$j]->judul ?>">
+								</div>
+							<?php } ?>
+						<?php }?>
 					</div>
 					<a class="carousel-control-prev" href="#g_utama" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
