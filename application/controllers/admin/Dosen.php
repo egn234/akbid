@@ -136,7 +136,9 @@ class dosen extends MY_Controller {
 		$status = $this->input->post('status');
 	
 		if ($foto != "") {
-			unlink("./upload/dosen/".$old_foto);
+			if ($old_foto != "image.jpg") {
+				unlink("./upload/dosen/".$old_foto);
+			}
 			//upload foto
 			define('MB', 1048576);
 			if ($_FILES['foto']['size'] > 5 * MB) { // JIKA FILE DI UPLOAD OLEH USER

@@ -80,7 +80,9 @@ class posts extends MY_Controller {
 
 			redirect('admin/posts/edit/'.$posting_id);
 		}elseif ($_FILES['foto']['size'] != 0) {
-			unlink("./upload/posts/".$old_foto);
+			if ($old_foto != "image.jpg") {
+				unlink("./upload/posts/".$old_foto);
+			}
 			$foto = $this->_fileMod();
 		}else{
 			$foto = $old_foto;

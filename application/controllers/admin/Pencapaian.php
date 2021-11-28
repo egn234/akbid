@@ -124,7 +124,9 @@ class pencapaian extends MY_Controller {
 		$old_foto = $this->input->post('old_foto');
 		
 		if ($foto != "") {
-			unlink("./upload/pencapaian/". $old_foto);
+			if ($old_foto != "image.jpg") {
+				unlink("./upload/pencapaian/". $old_foto);
+			}
 			//upload foto
 			define('MB', 1048576);
 			if ($_FILES['foto']['size'] > 5 * MB) { // JIKA FILE DI UPLOAD OLEH USER
@@ -153,7 +155,9 @@ class pencapaian extends MY_Controller {
 	{
 		$id = $_GET['id'];
 		$foto = $_GET['foto'];
-		unlink("./upload/pencapaian/" . $foto);
+		if ($foto != "image.jpg") {
+			unlink("./upload/pencapaian/". $foto);
+		}
 		$this->M_pencapaian->deletePencapaian($id);
 		$alert = '<div class="alert alert-danger alert-dismissible">
       				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

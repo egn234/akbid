@@ -38,7 +38,9 @@ class profile extends MY_Controller {
 		$validasi = true;
 
 		if ($foto != "") {
-			unlink("./upload/admin/".$old_foto);
+			if ($old_foto != "image.jpg") {
+				unlink("./upload/admin/".$old_foto);
+			}
 			//upload foto
 			define('MB', 1048576);
 			if ($_FILES['foto']['size'] > 5 * MB) { // JIKA FILE DI UPLOAD OLEH USER

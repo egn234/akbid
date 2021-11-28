@@ -97,7 +97,9 @@ class main_gallery extends MY_Controller {
 	{
 		$id = $_GET['id'];
 		$foto = $_GET['foto'];
-		unlink("./upload/galeri_utama/" . $foto);
+		if ($foto != "image.jpg") {
+			unlink("./upload/galeri_utama/" . $foto);
+		}
 		$this->m_galeriut->deleteGaleriut($id);
 		$alert = '<div class="alert alert-danger alert-dismissible">
       				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

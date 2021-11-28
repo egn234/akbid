@@ -67,6 +67,12 @@ class act_gallery extends MY_Controller {
 
 	function delete($galeri_kegiatan_id, $admin_id){
 		$cek_adm = $this->m_admin->cekAdminById($admin_id)[0]->hitung;
+		
+		$old_foto = $this->m_galerik->getGaleriKById($galeri_kegiatan_id)[0]->foto;
+
+		if ($old_foto != "image.jpg") {
+			unlink("./upload/galeri_kegiatan/".$old_foto);
+		}
 
 		if ($cek_adm != 0) {
 			$this->db->where('galeri_kegiatan_id', $galeri_kegiatan_id);
