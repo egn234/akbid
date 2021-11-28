@@ -51,11 +51,11 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6 py-3 wow fadeInUp">
 					<span class="subhead">About us</span>
-					<h2 class="title-section"><?= $data_about[0]->judul_about ?></h2>
+					<h2 class="title-section"><?php if(isset($data_about[0])){echo $data_about[0]->judul_about; }else{ echo "no one here but us, chikens!"; }  ?></h2>
 					<div class="divider"></div>
-
-					<?= $data_about[0]->deskripsi_about ?>
+					<?php if(isset($data_about[0])){echo $data_about[0]->deskripsi_about; ?>
 					<a href="<?= base_url() ?>page/detail_about" class="btn btn-primary mt-3">Read More</a>
+					<?php }else{ echo "no one here but us, chikens!"; }  ?>
 				</div>
 				<div class="col-lg-6 py-3 wow fadeInRight">
 					<div class="img-fluid py-3 text-center">

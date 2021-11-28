@@ -58,7 +58,7 @@
             </form>
   				</div>
           <div class="card-footer">
-            <a href="<?=base_url()?>admin/posting/list" class="btn btn-default">Kembali</a>
+            <a href="<?=base_url()?>admin/posts/list" class="btn btn-default">Kembali</a>
             <a href="#" data-toggle="modal" data-target="#konfirmasi" class="float-right btn btn-primary">Simpan</a>
           </div>
   				<!-- /.card-body -->

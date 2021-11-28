@@ -12,7 +12,7 @@ class m_about extends CI_Model {
 
 	public function getAboutById($about_id)
 	{
-		$sql = "SELECT * FROM tb_About WHERE about_id = $about_id";
+		$sql = "SELECT * FROM tb_about WHERE about_id = $about_id";
 		return $this->db->query($sql)->result();
 	}
 
