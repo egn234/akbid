@@ -60,7 +60,7 @@
 				</div>
 				<div class="col-lg-6 py-3 wow fadeInRight">
 					<div class="img-fluid py-3 text-center">
-						<img src="<?= base_url() ?>upload/akbid_logo.png" style="max-width: 360px;" alt="">
+						<img src="<?= base_url() ?>upload/akbid_logo_t.png" style="max-width: 360px;" alt="">
 					</div>
 				</div>
 			</div>

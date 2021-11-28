@@ -5,6 +5,8 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
+	<link rel="shortcut icon" href="<?=base_url()?>upload/favicon.ico" type="image/x-icon" />
+
   <title><?=$title?></title>
 
   <link rel="stylesheet" href="<?=base_url()?>assets/seogram/assets/css/maicons.css">

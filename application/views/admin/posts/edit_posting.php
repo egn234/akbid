@@ -58,7 +58,7 @@
             </form>
   				</div>
           <div class="card-footer">
-            <a href="<?=base_url()?>admin/posting/list" class="btn btn-default">Kembali</a>
+            <a href="<?=base_url()?>admin/posts/list" class="btn btn-default">Kembali</a>
             <a href="#" data-toggle="modal" data-target="#konfirmasi" class="float-right btn btn-primary">Simpan</a>
           </div>
   				<!-- /.card-body -->
@@ -106,7 +106,7 @@
 
   <?php $this->load->view('admin/foot_asset'); ?>
   <script type="text/javascript">
-  	document.getElementById("dashboard").setAttribute("class", "nav-link active");
+  	document.getElementById("posting").setAttribute("class", "nav-link active");
     $('#desc_post').summernote({
       placeholder: 'Tulis artikel disini....',
       disableDragAndDrop: true,

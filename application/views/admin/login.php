@@ -21,7 +21,10 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?=base_url()?>"><b>AKBID</b> Admin | Login</a>
+    <a href="<?=base_url()?>">
+      <img src="<?=base_url()?>upload/akbid_logo_t.png" width="50">
+      <b>AKBID</b> Admin | Login
+    </a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -54,6 +57,11 @@
 
     </div>
     <!-- /.login-card-body -->
+  </div>
+  <div class="row" align="center">
+    <div class="col-12" align="center">
+      <a href="<?=base_url()?>">Click here to go to homepage</a>
+    </div>
   </div>
 </div>
 <!-- /.login-box -->
