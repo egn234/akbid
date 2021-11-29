@@ -14,20 +14,12 @@
 				</div>
 			</div>
 			<div class="col-lg-3 py-3">
-				<h5>Company</h5>
-				<ul class="footer-menu">
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Career</a></li>
-					<li><a href="#">Advertise</a></li>
-					<li><a href="#">Terms of Service</a></li>
-					<li><a href="#">Help & Support</a></li>
-				</ul>
 			</div>
 			<div class="col-lg-3 py-3">
 				<h5>Contact Us</h5>
-				<p>203 Fake St. Mountain View, San Francisco, California, USA</p>
-				<a href="#" class="footer-link">+00 1122 3344 5566</a>
-				<a href="#" class="footer-link">seogram@temporary.com</a>
+				<p>Jl. Karanggan No. 30, Puspasari, Citeureup, Bogor, Jawa Barat, Indonesia</p>
+				<a href="#" class="footer-link">+62 822 9944 4490</a>
+				<a href="#" class="footer-link">akbid.annisajaya@gmail.com</a>
 			</div>
 		</div>
 
